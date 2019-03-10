@@ -5,9 +5,100 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Mar 2019 12:19:38 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Mar 2019 12:19:38 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Mar 2019 14:35:00 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Mar 2019 14:35:00 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>论文《MT-DNN》笔记</title>
+        <description>&lt;h2 id=&quot;论文multi-task-deep-neural-networks-for-natural-language-understanding笔记&quot;&gt;论文《Multi-Task Deep Neural Networks for Natural Language Understanding》笔记&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  论文地址：&lt;a href=&quot;https://arxiv.org/pdf/1901.11504.pdf&quot;&gt;微软MT-DNN论文《Multi-Task Deep Neural Networks for Natural Language Understanding》&lt;/a&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;mt-dnn简单介绍&quot;&gt;MT-DNN简单介绍&lt;/h4&gt;
+
+​	谷歌的&lt;a href=&quot;https://arxiv.org/pdf/1810.04805.pdf&quot;&gt;BERT&lt;/a&gt;在各个NLP任务（GLUE、SQuAD、命名实体识别、SWAG)上的表现都很好，但是BERT在词向量的预训练的第二阶段只使用了单个任务进行模型fine-tune，我们自然而然地会问：Fine-tune阶段使用多任务同时对网络参数进行微调效果会不会更好？。
+
+​	微软研究院在2019年发布的论文《Multi-Task Deep Neural Networks for Natural Language Understanding》就做了这方面的实验。论文提出了一个假设：在单一领域的数据集上使用单一的任务训练模型限制了模型的泛化。MT-DNN提供的思路是：利用多任务之间的约束来避免单一任务上的过拟合问题，从而提高模型的泛化能力。文章中使用的多任务是相似的，作者任务机器能够像人一样在相似的任务中获取到相关的经验，比如会滑雪的人就能比较容易的学会滑冰，对机器来说也就是能够使用更少的训练数据是模型获得相同的效果。
+
+&lt;h4 id=&quot;实验结果&quot;&gt;实验结果&lt;/h4&gt;
+
+​	&lt;strong&gt;(1)&lt;/strong&gt;MT-DNN在8/9的GLUE&lt;a href=&quot;Gerneral Lanuage Understanding Evaluation，是评估模型自然语言理解能力的最权威的指标&quot;&gt;1&lt;/a&gt;任务中取得了SOAT成绩，其中未达到SOAT成绩的原因是数据集存在问题。这８个数据集（任务）可以归纳分为以下四种类别：
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;任务&lt;/th&gt;
+      &lt;th&gt;数据集&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Single sentence classification&lt;/td&gt;
+      &lt;td&gt;CoLA：情感分类&lt;br /&gt;SST-2：判断句子是否符合语法要求&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Text similarity score&lt;/td&gt;
+      &lt;td&gt;STS-B：两句话的相似性&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Pairwise Text classification&lt;/td&gt;
+      &lt;td&gt;RET、MNLI：判断两句话的关系(emtaiment, controdictional, neutral)&lt;br /&gt;QQP, MRPC：判断那两句话是否具有相同的语义&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Relevence ranking&lt;/td&gt;
+      &lt;td&gt;QNLI：判断问答句子对的相关性&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+​	&lt;strong&gt;(2)&lt;/strong&gt;通过这种多任务训练得到的模型能够很好的适用于其他未见过的相似任务，即使只有很少的带标注的数据。因为MT-DNN底层使用的是BERT(Base)的网络，所以这种相似任务之间的适用性的提高可以确定由多任务的fine-tune带来的。实验表明即使只使用原始数据集的0.1%、1%样本，同样能够获得不错的准确率。下面是MT-DNN模型和BERT两个模型在SNLI数据集上的表现：
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;模型&lt;/th&gt;
+      &lt;th&gt;0.1%&lt;/th&gt;
+      &lt;th&gt;1％&lt;/th&gt;
+      &lt;th&gt;10%&lt;/th&gt;
+      &lt;th&gt;100%&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BERT&lt;/td&gt;
+      &lt;td&gt;51%&lt;/td&gt;
+      &lt;td&gt;82%&lt;/td&gt;
+      &lt;td&gt;90%&lt;/td&gt;
+      &lt;td&gt;94%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MT-DNN&lt;/td&gt;
+      &lt;td&gt;82%&lt;/td&gt;
+      &lt;td&gt;88%&lt;/td&gt;
+      &lt;td&gt;91%&lt;/td&gt;
+      &lt;td&gt;96%&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+</description>
+        <pubDate>Sun, 10 Mar 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/03/10/%E8%AE%BA%E6%96%87MT-DNN%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/03/10/%E8%AE%BA%E6%96%87MT-DNN%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</guid>
+        
+        <category>notes</category>
+        
+        <category>paper</category>
+        
+        <category>nlp</category>
+        
+        
+        <category>notes</category>
+        
+      </item>
     
       <item>
         <title>通过bundler安装jekyll</title>
