@@ -52,6 +52,9 @@ type: page
 
 - 量子位、大数据文摘、机器之心、paperweekly、新智元、人工智能头条、微软研究院AI头条、AINLP
 
+## 网站
++ [VReadTech:在网页上关注和浏览微信公众号](http://www.vreadtech.com)
+
 ## Comments
 
 {% include comments.html %}
