@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bash学习笔记</title>
+	<meta name="description" content="layout: posttitle: Bash学习笔记subtitle: 鸟哥的linux私家菜笔记author: henryZhoudate: 2018-07-16 17:24:43 +0800tag: Linux">
+	
+	<link rel="canonical" href="http://localhost:4000/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+	<link rel="alternate" type="application/rss+xml" title="HenryZhou's Personal Website" href="http://localhost:4000/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">HenryZhou's Personal Website</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
+          
+        
+          
+            
+              <li>
+            
+            <a href="/about/"><span class="glyphicon "></span> About</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>Bash学习笔记</h1>
+        <p>Jul 16, 2018</p>
+      </header>
+      <hr>
+      <article>
+        <p>layout: post
+title: Bash学习笔记
+subtitle: 鸟哥的linux私家菜笔记
+author: henryZhou
+date: 2018-07-16 17:24:43 +0800
+tag: Linux</p>
+
+<h1 id="bash学习">Bash学习</h1>
+
+<ul>
+  <li>history命令会列出记录的所有bash命令
+    <ul>
+      <li>!number：执行.bash_history文件中第n条命令</li>
+      <li>!!：执行上一条命令</li>
+      <li>!command：执行以command开头的最近的一条命令</li>
+    </ul>
+  </li>
+  <li>bash下组合按键
+    <ul>
+      <li>ctrl+C：终止目前的命令</li>
+      <li>ctrl+D：输入结束（EOF)</li>
+      <li>ctrl+Z：暂停目前的命令</li>
+    </ul>
+  </li>
+  <li>通配符
+    <ul>
+      <li>*：代表0到无穷多个任意字符</li>
+      <li>?：代表一定有一个任意字符</li>
+      <li>[]：代表一定有一个在中括号内的字符（非任意字符），例如[abcd]，代表一定有一个字符，可能是a,b,c,d这四个中任意一个</li>
+      <li>[-]：若有减号在中括号内，代表在编码顺序内的所有顺序，例如[0-9]代表0到9之间的所有数字</li>
+      <li>[^]：若中括号内的第一个字符为指数符号^，那表示原向选择，例如[ ^abc]代表一定有一个字符，只要是非a,b,c的其他字符就接受的意思</li>
+    </ul>
+  </li>
+  <li>bash其他符号
+    <ul>
+      <li>#：注释符号，后面内容不执行</li>
+      <li>\：转移符号</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>：管道符号，分隔两个管道命令的界定</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>～：用户的主文件夹</li>
+      <li>;：连续命令执行分隔符</li>
+      <li>$：变量前导符</li>
+      <li>&amp;：作业控制，将命令变成背景下工作</li>
+      <li>！：逻辑运算符非</li>
+      <li>/：目录符号</li>
+      <li>&gt;,»：数据流重定向，分别是“替换”和“累加”,1&gt;表示输出正确信息，2&gt;表示输出错误信息，同时输出则为2&gt;&amp;1</li>
+      <li>&lt;,«：数据流重定向，输入导向</li>
+      <li>``：两个反单引号中间为先执行命令，也可使用$()</li>
+    </ul>
+  </li>
+  <li>数据管理命令
+    <ul>
+      <li>cut：对于比较规整的信息，cut可以截取每一行特定部分的字符</li>
+      <li>grep：对输出结果进行查询筛选</li>
+      <li>sort：对输入内容进行排序</li>
+      <li>uniq：对输入去重的操作</li>
+      <li>wc：对输入进行统计计数</li>
+      <li>tee：同时将数据屏幕输出和保存到文件</li>
+      <li>xargs：将输入通过空格符或者断行符分开作为参数</li>
+      <li>-的用途：有些命令需要用到文件名作为参数，可以用-代指srdout和stdin输出的文件名</li>
+    </ul>
+  </li>
+  <li>正则表达式
+    <ul>
+      <li>字符集
+        <ul>
+          <li>[:alnum:]：代表英文大小写字符及数字，即0-9,A-Z，a-z</li>
+          <li>[:alpha:]：代表任何英文大小写字符，即A-Z,a-z</li>
+          <li>[:blank:]：代表空格键与[Tab]按键</li>
+          <li>[:cntrl:]：代表键盘上面的控制按键，即包括CR，LF，Tab，Del等</li>
+          <li>[:digit:]：代表数字字符，即0-9</li>
+          <li>[:graph:]：除了空格符（空格键与[Tab]按键）外的其他所有按键</li>
+          <li>[:lower:]：代表小写字符，即a-z</li>
+          <li>[:print:]：代表任何可以被打印出来的字符</li>
+          <li>[:punct:]：代表标点符号</li>
+          <li>[:upper:]：代表大写字符，即A-Z</li>
+          <li>[:space:]：任何会产生空白的字符，包括空格键[Tab]CR等</li>
+          <li>[:xdigit:]：代表十六进制的数字类型，因此包括0-9,A-F,a-f等</li>
+        </ul>
+      </li>
+      <li>基础字符表达式与应用
+        <ul>
+          <li>.：代表一定有一个任意字符</li>
+          <li>*：代表重复前一个0到无穷次</li>
+          <li>^word：待查找的字符串在行首</li>
+          <li>word$：待查找的字符串在行尾</li>
+          <li>[list]：从字符集合的RE字符里面找出想要选取的字符</li>
+          <li>[^list]：从字符集合的RE字符里面中找出不要的字符串或范围</li>
+          <li>[n1-n2]：从字符集合的RE字符里面找出想要选取的字符范围</li>
+          <li>[^$]：指定空白行</li>
+          <li>\{n1,n2\}：连续n到m个的前一个RE字符，若为\{n}则是连续n个的前一个RE字符，若为\{n,}则是连续n个以上的前一个RE字符</li>
+        </ul>
+      </li>
+      <li>扩展的正则表达式
+        <ul>
+          <li>+：重复一个或者一个以上的前一个RE字符</li>
+          <li>?：零个或者一个的前一个RE字符</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>：用或（or）的方法找出数个字符串</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>()：找出”组“字符串</li>
+          <li>()+：多个重复组的判别</li>
+        </ul>
+      </li>
+      <li>sed命令
+        <ul>
+          <li>作用：sed本身是一个管道命令，可以分析stdin，还可以将数据进行替换、删除、新增、选取特定行的功能</li>
+          <li>语法：sed [n1] [n2] function;function选项如下所示</li>
+          <li>a:新增，a后面可以接字符串，而这些字符串会在新的一行中出现</li>
+          <li>c：替换，c的后面可以接字符串，这些字符串可以替换n1,n2之间的行</li>
+          <li>d：删除，因为是删除，所以d后面通常不接任何参数</li>
+          <li>i：插入，i的后面可以接字符串，而这些字符串会在新的一行出现</li>
+          <li>p：打印，也就是将某一个选择的数据打印出来，通常p会与sed -n一起运行</li>
+          <li>s：替换，可以直接进行替换的工作，通常这个s的动作可以搭配正则表达式，例如1,20s/word1/word2/g,即将1到20行中word1替换成word2</li>
+        </ul>
+      </li>
+      <li>文件比较工具
+        <ul>
+          <li>diff [-bBi] from-file to-file：比较from-file和to-file的差别，注意不要用diff命令去比较不相干的文件，这样没有比较的结果</li>
+          <li>cmp [-s] file1 file2：比较file1和file2，返回第一个发现的不同点字节处和行数</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    </div>
+	
+    <!-- duoshuo.com javascript include code. -->    
+    
+    <!-- disqus.com javascript include code. -->
+	
+    <div class="post-area post comment">
+        <div id="disqus_thread"></div>
+    </div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://henryzhou1113.github.io/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"; 
+			this.page.identifier = "/2018/07/16/bash学习笔记"; 
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//henryzhou.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	
+    
+  </div>
+  
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:;">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:jasonzhoujx@outlook.com"><span class="glyphicon glyphicon-envelope"></span> jasonzhoujx@outlook.com</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/henryzhou1113">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>henryzhou1113</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/_posts/notes/2018-07-16-bash学习笔记.md">View source</a></span>
+          <!-- <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span> -->
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2018 HenryZhou</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>

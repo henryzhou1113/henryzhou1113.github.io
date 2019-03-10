@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Projects</title>
-	<meta name="description" content="henry's Ideas & Blogs">
+	<title>Linux入门之vim学习</title>
+	<meta name="description" content="Vim的使用">
 	
-	<link rel="canonical" href="http://localhost:4000/projects/">
+	<link rel="canonical" href="http://localhost:4000/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/">
 	<link rel="alternate" type="application/rss+xml" title="HenryZhou's Personal Website" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -63,8 +63,8 @@
         
           
             
-              <li class="active">
-              
+              <li>
+            
             <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
           
         
@@ -90,22 +90,106 @@
       <div class="row">
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
+      <header>
+        <h1>Linux入门之vim学习</h1>
+        <p>Jul 16, 2018</p>
+      </header>
+      <hr>
       <article>
-        
+        <h1 id="vim的使用">Vim的使用</h1>
+
+<ul>
+  <li>3种模式
+    <ul>
+      <li>一般模式：移动光标、删除字符或者整行，复制粘帖数据</li>
+      <li>编辑模式：按下“i,I,o,O,a,A,r,R”可以进入编辑模式，按下Esc可以推出编辑模式</li>
+      <li>命令行模式：输入”:,/,?”可以进入命令行模式，进行数据查找、大量替换字符、保存离开等功能</li>
+    </ul>
+  </li>
+  <li>一般模式下移动光标的方法
+    <ul>
+      <li>左右：h，l，使用组合键5h即可多列跳跃</li>
+      <li>上下：k，j，使用组合键5j即可多行跳跃</li>
+      <li>行首（行尾）：0（$）</li>
+      <li>文件首（尾）：gg（G）</li>
+      <li>向下（上）翻页：ctrl+f（b）</li>
+    </ul>
+  </li>
+  <li>一般模式下查找与替换
+    <ul>
+      <li>/word：向下寻找名称为word 的字符串</li>
+      <li>n：查找下一个</li>
+      <li>N：查找上一个</li>
+      <li>:n1,n2s/Word1/Word2/g：将n1和n2行之间的Word1替换为Word2</li>
+      <li>:1,$s/Word1/Word2/g：将第一行和最后一行之间的Word1替换为Word2</li>
+      <li>:1,$s/Word1/Word2/gc：将第一行和最后一行之间的Word1替换为Word2，并且逐个确认</li>
+    </ul>
+  </li>
+  <li>一般模式下删除
+    <ul>
+      <li>x,X:在一行字中，x为向后删除一个字符（相当于Del键），X为向前删除一个字符（相当于Backspace键），可使用组合键nx（X)连续删除n个字符</li>
+      <li>dd：删除光标所在一整行，可使用ndd删除光标所在行开始的n行</li>
+      <li>d1G：删除光标所在到第一行的所有数据</li>
+      <li>dG：删除从光标所在到最后一行的所有数据</li>
+      <li>d$：删除从光标所在处到该行最后一个数据</li>
+      <li>d0：删除从光标所在处到该行第一个数据</li>
+    </ul>
+  </li>
+  <li>一般模式下复制
+    <ul>
+      <li>yy：复制光标所在行的数据</li>
+      <li>nyy：复制光标所在向下n行</li>
+      <li>y1G：复制光标所在行到第一行的数据</li>
+      <li>yG：复制光标所在行到最后一行的数据</li>
+      <li>y0：复制光标所在字符到该行行首的所有数据</li>
+      <li>y$：复制光标所在字符到该行行尾的所有数据</li>
+      <li>p,P：p为将以复制的数据在光标下一行粘帖，P则为粘帖在光标上一行</li>
+    </ul>
+  </li>
+  <li>一般模式下其他操作
+    <ul>
+      <li>J：将光标所在行与下一行的数据结合成一行</li>
+      <li>u：撤销前一个操作</li>
+      <li>ctrl+r：重做前一个操作</li>
+      <li>.：小数点为重复前一个操作</li>
+      <li>ZZ：保存并且退出</li>
+    </ul>
+  </li>
+  <li>编辑模式
+    <ul>
+      <li>i,I：i为从目前光标所在处开始插入，I为在当前所在行第一个非空格符处开始插入</li>
+      <li>a,A：a为从当前光标所在的下一个字符处开始插入，A为从光标所在行的最后一格字符处开始插入</li>
+      <li>o,O：o为当前所在的下一行处插入新的一行，O为目前光标所在的上一行插入新的一行</li>
+      <li>r,R：r只会替换光标所在字符，R会一直替换知道Esc</li>
+      <li>Esc：退出编辑模式，进入一般模式</li>
+    </ul>
+  </li>
+  <li>命令行模式
+    <ul>
+      <li>:w：将编辑的数据写入硬盘文件中</li>
+      <li>:w!：若文件为只读，强制写入文件，至于能不能写入与文件权限有关</li>
+      <li>:q：离开vim</li>
+      <li>:q!：若修改过文件，又不想保存，使用！强制离开</li>
+      <li>:wq：保存后离开，“:wq!”强制保存后离开</li>
+      <li>:set nu：显示行号</li>
+      <li>:set nonu：取消行号显示</li>
+    </ul>
+  </li>
+</ul>
 
       </article>
       <hr>
-     <div class="bdsharebuttonbox">
-        <a href="#" class="bds_more" data-cmd="more"></a>
-        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-        <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
-        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-    </div>
-    <script>
-        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-    </script>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     </div>
 	
     <!-- duoshuo.com javascript include code. -->    
@@ -117,8 +201,8 @@
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "http://henryzhou1113.github.io/projects/"; 
-			this.page.identifier = ""; 
+			this.page.url = "http://henryzhou1113.github.io/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/"; 
+			this.page.identifier = "/2018/07/16/linux入门之vim学习"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -130,6 +214,7 @@
 	
     
   </div>
+  
   <div id="content" class="col-sm-3">
     <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
     <div id="myAffix" class="shadow-bottom-center hidden-xs" >
@@ -139,6 +224,7 @@
       <div class="content-text"></div>
     </div>
   </div>
+  
 </div>
     </div>
 
@@ -168,7 +254,7 @@
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/pages/1_projects.md">View source</a></span>
+          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/_posts/notes/2018-07-16-linux入门之vim学习.md">View source</a></span>
           <!-- <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span> -->
 		  <span class="point"> · </span>

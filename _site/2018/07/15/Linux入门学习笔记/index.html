@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Linux入门学习笔记</title>
+	<meta name="description" content="layout: posttitle: Linux文件、目录与磁盘格式subtitle: 鸟哥的Linux私房菜笔记author: henryZhoudate: 2018-07-15 21:35:10 +0800categories: Reviewtag: Note">
+	
+	<link rel="canonical" href="http://localhost:4000/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+	<link rel="alternate" type="application/rss+xml" title="HenryZhou's Personal Website" href="http://localhost:4000/feed.xml" />
+	
+	<!-- <link rel="stylesheet" href="/css/main.css"> -->
+    
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
+	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
+    -->
+    
+	<script type="text/javascript" src="/static/js/index.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+ <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+  <body>
+
+    <header>
+
+<!-- navbar -->
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">HenryZhou's Personal Website</a>
+      <p class="navbar-text"></p>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+
+        
+          <li>
+        
+        <a href="/">Home</a></li>
+
+        
+          
+            
+              <li>
+            
+            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
+          
+        
+          
+            
+              <li>
+            
+            <a href="/about/"><span class="glyphicon "></span> About</a></li>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+</header>
+
+    <div id="main" class="container main">
+      <div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>Linux入门学习笔记</h1>
+        <p>Jul 15, 2018</p>
+      </header>
+      <hr>
+      <article>
+        <p>layout: post
+title: Linux文件、目录与磁盘格式
+subtitle: 鸟哥的Linux私房菜笔记
+author: henryZhou
+date: 2018-07-15 21:35:10 +0800
+categories: Review
+tag: Note</p>
+
+<h1 id="鸟哥的linux私房菜">鸟哥的Linux私房菜</h1>
+
+<h2 id="一linux文件目录与磁盘格式">一、Linux文件、目录与磁盘格式</h2>
+
+<h3 id="11学习资源">1.1学习资源</h3>
+
+<ul>
+  <li>推荐的网站
+    <ul>
+      <li>Study-Area:http://www.study-area.org</li>
+      <li>鸟哥的私房菜馆：http://linux.vbird.org</li>
+      <li>卧龙大师的网络技术文件：http://linux.tnc.edu.cn.tw/techdoc/</li>
+      <li>中国linux团队：http://www.linux.org.cn/</li>
+      <li>狼主的网络实验室：http://netlab.kh.edu.cn/inde.htm</li>
+      <li>吴仁志的文件集：http://www.cses.tcc.edu.cn/~chihwu/</li>
+      <li>国人CLE计划：<a href="http://cle.linux.org.tw/">http://cle.linux.org.tw/</a></li>
+      <li>自由软件技术交流网： <a href="http://freesf.tnc.edu.tw/index.php">http://freesf.tnc.edu.tw/index.php</a></li>
+      <li>B2D: <a href="http://b2d.tnc.edu.tw/">http://b2d.tnc.edu.tw/</a></li>
+      <li>KNOPPIX：<a href="http://www.knoppix.net/">http://www.knoppix.net/</a></li>
+      <li>中文 KNOPPIX: <a href="http://knoppix.tnc.edu.tw/">http://knoppix.tnc.edu.tw/</a></li>
+      <li>FHS: <a href="http://www.pathname.com/fhs/">http://www.pathname.com/fhs/</a></li>
+      <li>LSB: <a href="http://www.linuxbase.org/">http://www.linuxbase.org/</a></li>
+      <li>计算机基础 (http://www.study-area.org/compu/compu.htm)</li>
+      <li>网络基础 (http://www.study-area.org/network/network.htm)</li>
+      <li><a href="http://linux.vbird.org/linux_basic/0120howtolinux/0120howtolinux_1.php">http://linux.vbird.org/linux_basic/0120howtolinux/0120howtolinux_1.php</a>About Internet</li>
+      <li>大南国小（林克敏主任文件集） http://freebsd.lab.mlc.edu.tw/</li>
+      <li>张毓麟先生的小文章 http://www.se.ntou.edu.tw/~ylchang/MyDocuments/index.html</li>
+      <li>台湾 Linux 社群  http://www.linux.org.tw/</li>
+    </ul>
+  </li>
+  <li>常用的FAQ网站
+    <ul>
+      <li>Linux 自己的文件数据： /usr/share/doc (在你的 PC 中)</li>
+      <li>CLDP 中文文件计划 <a href="http://www.linux.org.tw/CLDP/">http://www.linux.org.tw/CLDP/</a></li>
+      <li>Unix 的一般常见问题  <a href="http://www.csie.nctu.edu.tw/document/unixfaq/">http://www.csie.nctu.edu.tw/document/unixfaq/</a></li>
+      <li>The LinuxDocumentation Project：<a href="http://www.tldp.org/">http://www.tldp.org/</a></li>
+      <li>『提问的智慧<a href="http://phorum.vbird.org/viewtopic.php?t=96%E3%80%8F">http://phorum.vbird.org/viewtopic.php?t=96』</a></li>
+      <li>李果正先生之 GNU/Linux 初学者之旅： http://info.sayya.org/~edt1023/linux_entry.html</li>
+      <li>鸟哥备份：http://linux.vbird.org/linux_basic/0120howtolinux/0120howtolinux_3.php</li>
+      <li>信息人的有效学习(洪朝贵教授网页)：http://www.cyut.edu.tw/~ckhung/published/018learn.shtml</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="12安装">1.2安装</h2>
+
+<ul>
+  <li>分区
+    <ul>
+      <li>按照顺序：/boot、/、/usr、/var、/tmp</li>
+      <li>/home</li>
+      <li>Swap</li>
+    </ul>
+  </li>
+  <li>引导程序
+    <ul>
+      <li>引导程序grup最好安装地点选择整块磁盘的文件名</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="13系统终端使用">1.3系统终端使用</h2>
+
+<ul>
+  <li>命令行模式：
+    <ul>
+      <li>x-window提供的终端：terminal</li>
+      <li>ctrl+alt+[F1]~[F6]：进入tty1~tty6的操作界面环境，推出crtl+alt+F7</li>
+      <li>linux下区分大小写</li>
+      <li>使用过的命令保存在.bash_history文件中</li>
+      <li>ctrl+c命令能使当前终端运行的程序停止</li>
+      <li>ctrl+d命代表键盘输入结束，可以用来代替exit，也就是退出的功能</li>
+    </ul>
+  </li>
+  <li>man命令
+    <ul>
+      <li>man [数字] 命令：可以查到相应命令的手册，数字代表不同用户环境下该命令的用法</li>
+      <li>man -f 命令：寻找命令相关的手册</li>
+      <li>man -k 关键字：寻找关键字相关命令的手册</li>
+      <li>具体某一个软件手册可以到/usr/share/doc下去寻找对应的文件夹</li>
+    </ul>
+  </li>
+  <li>正确的关机方法
+    <ul>
+      <li>who：查看当前在线的用户</li>
+      <li>netstat -a：查看网络的联机状态</li>
+      <li>ps -aux：查看后台</li>
+      <li>sync：将数据同步写入硬盘</li>
+      <li>正确的关机命令：shundown</li>
+      <li>重启：reboot</li>
+    </ul>
+  </li>
+  <li>重启x-window：ctrl+alt+backspace</li>
+  <li>修改文件的权限
+    <ul>
+      <li>用户类别：u:user	;g:group	;o:others</li>
+      <li>权限类别：r:read ;w:write ;x:execute</li>
+      <li>操作类别：+：增加；-：减少；=：设置</li>
+      <li>chgrp 用户组 文件：修改文件的用户组</li>
+      <li>chown 所有者:用户组 文件：修改文件的所有者和用户组</li>
+      <li>chmod xyz 文件：xyz为数字，r：4;w：2;x：1;x=7=4+2+1表示rwx三种权限都有，以此类推</li>
+      <li>chmod u=rwx,go=rx 文件;u：user;g：group;o：others</li>
+      <li>chmod  u+w 文件：user增加对文件写权限</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="14目录结构">1.4目录结构</h2>
+
+<ul>
+  <li>FHS定义的目录规范
+    <ul>
+      <li>/（root，根目录）：与开机系统有关</li>
+      <li>/usr（UNIX software resource）：与软件安装/执行有关</li>
+      <li>/var（variable）：与系统运行过程有关</li>
+    </ul>
+  </li>
+  <li>/目录内容
+    <ul>
+      <li>/bin：放置单用户维护模式下还能被操作的命令</li>
+      <li>/boot：放置开机会使用到的文件，包括Linux内核文件以及开机菜单的开机所需要的配置文件等</li>
+      <li>/dev：放置设备与接口设备文件</li>
+      <li>/etc：放置系统的配置文件</li>
+      <li>/home：系统默认的用户主文件夹</li>
+      <li>/lib：放置开机时会使用的函数库</li>
+      <li>/media：放置可删除的设备</li>
+      <li>/mnt：用于暂时挂载某些额外的设备</li>
+      <li>/opt：给第三方软件放置的目录。不过在以前的linux 系统中，我们还是习惯放置在usr/local目录下</li>
+      <li>/root：系统管理员（root）的主文件夹，在进入单用户维护模式而仅挂载根目录时，我们能够访问到</li>
+      <li>/sbin：放置系统开机过程中需要的系统执行文件</li>
+      <li>/srv：可视为service的缩写，是一些网络服务启动后所需要取用的数据目录</li>
+      <li>/tmp：让用户或者正在执行的程序暂时放置文件爱你的地方</li>
+      <li>/proc：该目录本身是一个虚拟文件系统，他放置的内容都是在内存中，因此目录本身不占用内存空间</li>
+      <li>/sys：同上，也是一个虚拟文件系统，包括目前已加载的内核模块和内核检验到的硬件设备信息，同样不占用内存</li>
+      <li>/etc、/bin、/dev、/lib、/sbin这五个目录不能/目录分开，因为开机是只用根目录会被挂载，而以上目录与系统启动有着重要关系，必须在开机时能够访问到</li>
+    </ul>
+  </li>
+  <li>/usr目录内容
+    <ul>
+      <li>/usr一放置的数据属于可分享的与不可变动的，是UNIX Software Resource的缩写</li>
+      <li>/usr/X11R6/：X Window系统重要数据所放置的目录</li>
+      <li>/usr/bin：绝大部分用户可使用命令都放在这里。注意它与/bin的不同之处（是否与开机过程有关）</li>
+      <li>/usr/include/：放置C/C++等语言的头文件和包含文件，当我们以tarball方式安装软件时会使用到这里的许多包含文件</li>
+      <li>/usr/lib：包含各应用软件的函数库、目标文件以及不被一般用户惯用的执行文件或脚本</li>
+      <li>/usr/local：放置系统管理员自行安装自己下载的软件（非distribution默认提供者）</li>
+      <li>/usr/sbin：非系统正常运行所需要的系统命令，最常见的就是某些网络服务器软件的服务命令（daemon）</li>
+      <li>/usr/src：一般源码建议放置在这里。至于内核源码建议放置在/usr/src/linux/目录下</li>
+    </ul>
+  </li>
+  <li>/var目录内容
+    <ul>
+      <li>/var系统运行后开始暂用硬盘容量，包括缓存（cache）、登录文件（logfile）以及某些软件运行所产生的文件（lock file，run file），或者例如MYSQL数据库的文件</li>
+      <li>/var/cache/：应用程序本身运行过程中会产生的暂存文件</li>
+      <li>/var/lib/：程序执行过程中，需要使用到的数据文件位置，软件有各自的目录</li>
+      <li>/var/lock/：存放某些设备或者文件资源的使用锁文件</li>
+      <li>/var/log：登录文件放置的目录</li>
+      <li>/var/mail/：放置个人电子邮件信箱的目录，不过这个目录也被放置到val/spool/mail/目录中，通常这两个目录互为链接文件</li>
+      <li>/var/run/：某些程序或者服务启动后，会将他们的PID放置这个目录下</li>
+      <li>/var/spool/：存放程序使用的数据的队列</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="141目录与路径">1.4.1目录与路径</h3>
+
+<ul>
+  <li>常见处理目录和文件的命令
+    <ul>
+      <li>cd：切换目录，重要：-表示前一个工作目录</li>
+      <li>pwd：现实当前目录</li>
+      <li>mkdir：新建一个新的目录</li>
+      <li>rmdir：删除一个空的目录</li>
+      <li>cp：复制文件或目录</li>
+      <li>dd：命令十分强大，可以用于备份，设置制作启动盘</li>
+      <li>rm：删除文件或目录</li>
+      <li>mv：移动文件或目录</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="15文件操作">1.5文件操作</h3>
+
+<ul>
+  <li>文件创建或者查看
+    <ul>
+      <li>cat：由第一行开始显示文件内容</li>
+      <li>tac：从最后一行开始显示，可以看出tac是cat的倒写</li>
+      <li>nl：显示的时候顺便输出行号</li>
+      <li>more：一页一页地显示文件内容</li>
+      <li>less：与more相似，但是比more更好的是，它可以往前翻页</li>
+      <li>head：只看头几行</li>
+      <li>tail：只看结尾几行</li>
+      <li>od：以二进制的方式读取文件内容</li>
+      <li>touch：创建文件</li>
+      <li>file：查看文件类型</li>
+    </ul>
+  </li>
+  <li>文件的查询
+    <ul>
+      <li>which ：寻找“执行文件”的位置</li>
+      <li>type：判断“执行文件”的类型</li>
+      <li>whereis：查找文件的绝对地址</li>
+      <li>locate：查找文件的绝对地址</li>
+      <li>find：可以查询时间、用户、类型、权限、大小相关的文件，功能强大，但是需要扫描磁盘，一次速度略慢</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="16磁盘管理">1.6磁盘管理</h3>
+
+<ul>
+  <li>磁盘管理常用命令
+    <ul>
+      <li>df：查看磁盘占用情况</li>
+      <li>fdisk：磁盘分区</li>
+      <li>mkfs：磁盘格式化</li>
+      <li>fsck、badblocks：磁盘检验，通常只有身为root且你的文件系统有问题的时候才使用这个命令</li>
+      <li>mount：磁盘挂载</li>
+      <li>unmount：磁盘卸载</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="17常见的压缩命令">1.7常见的压缩命令</h3>
+
+<ul>
+  <li>常见的压缩格式：
+    <ul>
+      <li>.Z：compress程序压缩的命令</li>
+      <li>.gz：gzip程序压缩的文件</li>
+      <li>.bz2：bzip2程序压缩的文件</li>
+      <li>.tar：tar程序打包的数据，并没有压缩过</li>
+      <li>.tar.gz：tar程序打包的文件，其中经过gzip的压缩</li>
+      <li>.tar.bz2：tar程序打包的文件，其中经过bzip2的压缩</li>
+    </ul>
+  </li>
+  <li>压缩与解压缩命令
+    <ul>
+      <li>gzip：压缩并且删除源文件</li>
+      <li>gzip -d：解压缩并且删除源文件</li>
+      <li>zcat：查看压缩文件内容</li>
+      <li>bzip2：为取代gzip而开发的压缩命令，效果比gzip更好，-k选项能够保留源文件</li>
+      <li>bzip2 -d：解压缩</li>
+      <li>bzcat：查看压缩文件的内容</li>
+      <li>tar -jcv -f filename.tar.bz2 要被压缩的文件：通过bzip2的支持进行压缩，排除特定文件可用–exclude=file</li>
+      <li>tar -zcv -f filename.tar.gz 要被压缩的文件：通过gzip的支持进行压缩</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>tar -jtv -f 文件路径：查阅tar文件中的数据内容（可查看文件名），后面加上</td>
+              <td>grep ’string‘可以查看tar包中符合搜索项的文件</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>tar -jxv -f 文件路径：解压缩bzip2压缩的tar文件，后面加上带解开文件名即可解压缩指定文件</li>
+      <li>tar -zxv -f 文件路径：解压缩gzip压缩的tar文件，后面同上</li>
+    </ul>
+  </li>
+</ul>
+
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    </div>
+	
+    <!-- duoshuo.com javascript include code. -->    
+    
+    <!-- disqus.com javascript include code. -->
+	
+    <div class="post-area post comment">
+        <div id="disqus_thread"></div>
+    </div>
+	<script>
+		var disqus_config = function () {
+			this.page.url = "http://henryzhou1113.github.io/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"; 
+			this.page.identifier = "/2018/07/15/Linux入门学习笔记"; 
+		};
+		(function() {
+			var d = document, s = d.createElement('script');
+			s.src = '//henryzhou.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	
+    
+  </div>
+  
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
+    </div>
+
+    
+    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
+      <a href="javascript:;">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+      </a>
+    </div>
+
+    <footer class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <a href="mailto:jasonzhoujx@outlook.com"><span class="glyphicon glyphicon-envelope"></span> jasonzhoujx@outlook.com</a>
+        <span class="point"> · </span>
+        
+          <a href="https://github.com/henryzhou1113">
+            <span class="icon">
+              <svg viewBox="0 0 16 16">
+                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            Github
+            <!-- <span>henryzhou1113</span> -->
+          </a>
+          
+          <span class="point"> · </span>
+          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/_posts/notes/2018-07-15-Linux入门学习笔记.md">View source</a></span>
+          <!-- <span class="point"> · </span>
+          <span><a class="newpost" href="javascript:;">New post</a></span> -->
+		  <span class="point"> · </span>
+          <span><a href="/feed.xml">RSS</a></span>
+          <span class="point"> · </span>
+          <span>&copy; 2018 HenryZhou</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    <script type="text/javascript">
+    function OnClickNewPost()
+    {
+        var title = prompt("Please enter title of your post");
+        if (title!=null){
+            title = title.replace(" ", "-");
+            var currentdate = new Date();
+            var urlNewPage = "?filename=_posts/" 
+                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
+                
+            var defaultText =  [
+                '---',
+                'layout: post',
+                'comments: true',
+                'categories: diary',
+                '---',
+                '## Title',
+                'text'
+                ].join('\n');
+            urlNewPage += "&value=" + encodeURIComponent(defaultText);
+            window.open(urlNewPage);
+        }
+    }
+    
+    $(function() {
+      // CreateNewPostLinks
+      $('.newpost').each(function(){
+          $(this).click(OnClickNewPost);
+      });
+    });
+</script>
+  
+  </body>
+</html>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LiXizhi's Personal Website</title>
-    <description>Xizhi's Ideas &amp; Blogs</description>
+    <title>HenryZhou's Personal Website</title>
+    <description>henry's Ideas &amp; Blogs</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Mar 2019 22:30:01 +0800</pubDate>
-    <lastBuildDate>Sat, 09 Mar 2019 22:30:01 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Mar 2019 10:55:45 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Mar 2019 10:55:45 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -549,7 +549,7 @@
 
       &lt;ul&gt;
         &lt;li&gt;arr[i,:]	#取第i行数据
-arr[i:j, :]	#取第i行到第j行的数据&lt;/li&gt;
+	arr[i:j, :]	#取第i行到第j行的数据&lt;/li&gt;
       &lt;/ul&gt;
 
       &lt;p&gt;取列数据：&lt;/p&gt;
@@ -1403,17 +1403,17 @@ arr[i:j, :]	#取第i行到第j行的数据&lt;/li&gt;
 
 &lt;p&gt;[流畅的python.Luciano Ramalho著.安道 吴珂译][https://github.com/fluentpython/example-code]&lt;/p&gt;
 </description>
-        <pubDate>Wed, 08 Aug 2018 11:37:17 +0800</pubDate>
-        <link>http://localhost:4000/2018/08/08/%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/08/08/%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
+        <pubDate>Wed, 08 Aug 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/08/08/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/08/08/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/</guid>
         
         
-        <category>python</category>
+        <category>notes</category>
         
       </item>
     
       <item>
-        <title>深度学习笔记-前言</title>
+        <title>深度学习笔记 前言</title>
         <description>&lt;ul&gt;
   &lt;li&gt;人工智能早期，计算机能够迅速解决那些对人类智力来说非常困难的问题。而人工智能的真正挑战在于解决那些对人来说很容易执行，但很难形式化描述的任务，如识别人们所说的话或图像中的脸。&lt;/li&gt;
   &lt;li&gt;深度学习讨论的是一种让计算机从经验中学习，并根据层次化的概念来__理解世界__的解决方案，而每个概念则通过某些相对简单的概念之间的关系来定义&lt;/li&gt;
@@ -1438,12 +1438,12 @@ arr[i:j, :]	#取第i行到第j行的数据&lt;/li&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Fri, 20 Jul 2018 20:07:37 +0800</pubDate>
+        <pubDate>Fri, 20 Jul 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/20/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/20/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/</guid>
         
-        <category>Deep-Learning</category>
         
+        <category>notes</category>
         
       </item>
     
@@ -1508,12 +1508,12 @@ gem 'github-pages',group: :jekyll_plugins
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle exec jekyll serve
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
-        <pubDate>Thu, 19 Jul 2018 22:48:09 +0800</pubDate>
+        <pubDate>Thu, 19 Jul 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/</guid>
         
-        <category>Tutarial</category>
         
+        <category>notes</category>
         
       </item>
     
@@ -1623,17 +1623,17 @@ gem 'github-pages',group: :jekyll_plugins
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Thu, 19 Jul 2018 22:44:31 +0800</pubDate>
+        <pubDate>Thu, 19 Jul 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/19/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/19/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/</guid>
         
-        <category>Note</category>
         
+        <category>notes</category>
         
       </item>
     
       <item>
-        <title>Bash学习笔记</title>
+        <title>How To Build A Maching_learning System</title>
         <description>&lt;h1 id=&quot;how-to-build-a-maching-learing-system&quot;&gt;How to build a Maching Learing system&lt;/h1&gt;
 
 &lt;ul&gt;
@@ -1756,18 +1756,117 @@ The Mean absolute error of XGBoost algorithm with numerical and non-null value i
   &lt;li&gt;We use impter-method to imputer the missing values and apply one-hot encoding to transform categorical variable to binary value,in doing so,we can reserve features as much as possible.It turns out that we can recieve much better error performance based on these data than that remove the columns with non-numerical and non-null value&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 16 Jul 2018 17:24:43 +0800</pubDate>
-        <link>http://localhost:4000/2018/07/16/How-to-build-A-Maching_Learning-System/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/07/16/How-to-build-A-Maching_Learning-System/</guid>
+        <pubDate>Tue, 17 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/17/How-to-build-A-Maching_Learning-System/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/17/How-to-build-A-Maching_Learning-System/</guid>
         
         
-        <category>python</category>
+        <category>nlp</category>
+        
+      </item>
+    
+      <item>
+        <title>Linux入门之vim学习</title>
+        <description>&lt;h1 id=&quot;vim的使用&quot;&gt;Vim的使用&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;3种模式
+    &lt;ul&gt;
+      &lt;li&gt;一般模式：移动光标、删除字符或者整行，复制粘帖数据&lt;/li&gt;
+      &lt;li&gt;编辑模式：按下“i,I,o,O,a,A,r,R”可以进入编辑模式，按下Esc可以推出编辑模式&lt;/li&gt;
+      &lt;li&gt;命令行模式：输入”:,/,?”可以进入命令行模式，进行数据查找、大量替换字符、保存离开等功能&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般模式下移动光标的方法
+    &lt;ul&gt;
+      &lt;li&gt;左右：h，l，使用组合键5h即可多列跳跃&lt;/li&gt;
+      &lt;li&gt;上下：k，j，使用组合键5j即可多行跳跃&lt;/li&gt;
+      &lt;li&gt;行首（行尾）：0（$）&lt;/li&gt;
+      &lt;li&gt;文件首（尾）：gg（G）&lt;/li&gt;
+      &lt;li&gt;向下（上）翻页：ctrl+f（b）&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般模式下查找与替换
+    &lt;ul&gt;
+      &lt;li&gt;/word：向下寻找名称为word 的字符串&lt;/li&gt;
+      &lt;li&gt;n：查找下一个&lt;/li&gt;
+      &lt;li&gt;N：查找上一个&lt;/li&gt;
+      &lt;li&gt;:n1,n2s/Word1/Word2/g：将n1和n2行之间的Word1替换为Word2&lt;/li&gt;
+      &lt;li&gt;:1,$s/Word1/Word2/g：将第一行和最后一行之间的Word1替换为Word2&lt;/li&gt;
+      &lt;li&gt;:1,$s/Word1/Word2/gc：将第一行和最后一行之间的Word1替换为Word2，并且逐个确认&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般模式下删除
+    &lt;ul&gt;
+      &lt;li&gt;x,X:在一行字中，x为向后删除一个字符（相当于Del键），X为向前删除一个字符（相当于Backspace键），可使用组合键nx（X)连续删除n个字符&lt;/li&gt;
+      &lt;li&gt;dd：删除光标所在一整行，可使用ndd删除光标所在行开始的n行&lt;/li&gt;
+      &lt;li&gt;d1G：删除光标所在到第一行的所有数据&lt;/li&gt;
+      &lt;li&gt;dG：删除从光标所在到最后一行的所有数据&lt;/li&gt;
+      &lt;li&gt;d$：删除从光标所在处到该行最后一个数据&lt;/li&gt;
+      &lt;li&gt;d0：删除从光标所在处到该行第一个数据&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般模式下复制
+    &lt;ul&gt;
+      &lt;li&gt;yy：复制光标所在行的数据&lt;/li&gt;
+      &lt;li&gt;nyy：复制光标所在向下n行&lt;/li&gt;
+      &lt;li&gt;y1G：复制光标所在行到第一行的数据&lt;/li&gt;
+      &lt;li&gt;yG：复制光标所在行到最后一行的数据&lt;/li&gt;
+      &lt;li&gt;y0：复制光标所在字符到该行行首的所有数据&lt;/li&gt;
+      &lt;li&gt;y$：复制光标所在字符到该行行尾的所有数据&lt;/li&gt;
+      &lt;li&gt;p,P：p为将以复制的数据在光标下一行粘帖，P则为粘帖在光标上一行&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;一般模式下其他操作
+    &lt;ul&gt;
+      &lt;li&gt;J：将光标所在行与下一行的数据结合成一行&lt;/li&gt;
+      &lt;li&gt;u：撤销前一个操作&lt;/li&gt;
+      &lt;li&gt;ctrl+r：重做前一个操作&lt;/li&gt;
+      &lt;li&gt;.：小数点为重复前一个操作&lt;/li&gt;
+      &lt;li&gt;ZZ：保存并且退出&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;编辑模式
+    &lt;ul&gt;
+      &lt;li&gt;i,I：i为从目前光标所在处开始插入，I为在当前所在行第一个非空格符处开始插入&lt;/li&gt;
+      &lt;li&gt;a,A：a为从当前光标所在的下一个字符处开始插入，A为从光标所在行的最后一格字符处开始插入&lt;/li&gt;
+      &lt;li&gt;o,O：o为当前所在的下一行处插入新的一行，O为目前光标所在的上一行插入新的一行&lt;/li&gt;
+      &lt;li&gt;r,R：r只会替换光标所在字符，R会一直替换知道Esc&lt;/li&gt;
+      &lt;li&gt;Esc：退出编辑模式，进入一般模式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;命令行模式
+    &lt;ul&gt;
+      &lt;li&gt;:w：将编辑的数据写入硬盘文件中&lt;/li&gt;
+      &lt;li&gt;:w!：若文件为只读，强制写入文件，至于能不能写入与文件权限有关&lt;/li&gt;
+      &lt;li&gt;:q：离开vim&lt;/li&gt;
+      &lt;li&gt;:q!：若修改过文件，又不想保存，使用！强制离开&lt;/li&gt;
+      &lt;li&gt;:wq：保存后离开，“:wq!”强制保存后离开&lt;/li&gt;
+      &lt;li&gt;:set nu：显示行号&lt;/li&gt;
+      &lt;li&gt;:set nonu：取消行号显示&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 16 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/</guid>
+        
+        
+        <category>notes</category>
         
       </item>
     
       <item>
         <title>Bash学习笔记</title>
-        <description>&lt;h1 id=&quot;bash学习&quot;&gt;Bash学习&lt;/h1&gt;
+        <description>&lt;p&gt;layout: post
+title: Bash学习笔记
+subtitle: 鸟哥的linux私家菜笔记
+author: henryZhou
+date: 2018-07-16 17:24:43 +0800
+tag: Linux&lt;/p&gt;
+
+&lt;h1 id=&quot;bash学习&quot;&gt;Bash学习&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;history命令会列出记录的所有bash命令
@@ -1899,114 +1998,26 @@ The Mean absolute error of XGBoost algorithm with numerical and non-null value i
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 16 Jul 2018 17:24:43 +0800</pubDate>
+        <pubDate>Mon, 16 Jul 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         
-        <category>Linux</category>
         
+        <category>notes</category>
         
       </item>
     
       <item>
-        <title>vim学习</title>
-        <description>&lt;h1 id=&quot;vim的使用&quot;&gt;Vim的使用&lt;/h1&gt;
+        <title>Linux入门学习笔记</title>
+        <description>&lt;p&gt;layout: post
+title: Linux文件、目录与磁盘格式
+subtitle: 鸟哥的Linux私房菜笔记
+author: henryZhou
+date: 2018-07-15 21:35:10 +0800
+categories: Review
+tag: Note&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;3种模式
-    &lt;ul&gt;
-      &lt;li&gt;一般模式：移动光标、删除字符或者整行，复制粘帖数据&lt;/li&gt;
-      &lt;li&gt;编辑模式：按下“i,I,o,O,a,A,r,R”可以进入编辑模式，按下Esc可以推出编辑模式&lt;/li&gt;
-      &lt;li&gt;命令行模式：输入”:,/,?”可以进入命令行模式，进行数据查找、大量替换字符、保存离开等功能&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般模式下移动光标的方法
-    &lt;ul&gt;
-      &lt;li&gt;左右：h，l，使用组合键5h即可多列跳跃&lt;/li&gt;
-      &lt;li&gt;上下：k，j，使用组合键5j即可多行跳跃&lt;/li&gt;
-      &lt;li&gt;行首（行尾）：0（$）&lt;/li&gt;
-      &lt;li&gt;文件首（尾）：gg（G）&lt;/li&gt;
-      &lt;li&gt;向下（上）翻页：ctrl+f（b）&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般模式下查找与替换
-    &lt;ul&gt;
-      &lt;li&gt;/word：向下寻找名称为word 的字符串&lt;/li&gt;
-      &lt;li&gt;n：查找下一个&lt;/li&gt;
-      &lt;li&gt;N：查找上一个&lt;/li&gt;
-      &lt;li&gt;:n1,n2s/Word1/Word2/g：将n1和n2行之间的Word1替换为Word2&lt;/li&gt;
-      &lt;li&gt;:1,$s/Word1/Word2/g：将第一行和最后一行之间的Word1替换为Word2&lt;/li&gt;
-      &lt;li&gt;:1,$s/Word1/Word2/gc：将第一行和最后一行之间的Word1替换为Word2，并且逐个确认&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般模式下删除
-    &lt;ul&gt;
-      &lt;li&gt;x,X:在一行字中，x为向后删除一个字符（相当于Del键），X为向前删除一个字符（相当于Backspace键），可使用组合键nx（X)连续删除n个字符&lt;/li&gt;
-      &lt;li&gt;dd：删除光标所在一整行，可使用ndd删除光标所在行开始的n行&lt;/li&gt;
-      &lt;li&gt;d1G：删除光标所在到第一行的所有数据&lt;/li&gt;
-      &lt;li&gt;dG：删除从光标所在到最后一行的所有数据&lt;/li&gt;
-      &lt;li&gt;d$：删除从光标所在处到该行最后一个数据&lt;/li&gt;
-      &lt;li&gt;d0：删除从光标所在处到该行第一个数据&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般模式下复制
-    &lt;ul&gt;
-      &lt;li&gt;yy：复制光标所在行的数据&lt;/li&gt;
-      &lt;li&gt;nyy：复制光标所在向下n行&lt;/li&gt;
-      &lt;li&gt;y1G：复制光标所在行到第一行的数据&lt;/li&gt;
-      &lt;li&gt;yG：复制光标所在行到最后一行的数据&lt;/li&gt;
-      &lt;li&gt;y0：复制光标所在字符到该行行首的所有数据&lt;/li&gt;
-      &lt;li&gt;y$：复制光标所在字符到该行行尾的所有数据&lt;/li&gt;
-      &lt;li&gt;p,P：p为将以复制的数据在光标下一行粘帖，P则为粘帖在光标上一行&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;一般模式下其他操作
-    &lt;ul&gt;
-      &lt;li&gt;J：将光标所在行与下一行的数据结合成一行&lt;/li&gt;
-      &lt;li&gt;u：撤销前一个操作&lt;/li&gt;
-      &lt;li&gt;ctrl+r：重做前一个操作&lt;/li&gt;
-      &lt;li&gt;.：小数点为重复前一个操作&lt;/li&gt;
-      &lt;li&gt;ZZ：保存并且退出&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;编辑模式
-    &lt;ul&gt;
-      &lt;li&gt;i,I：i为从目前光标所在处开始插入，I为在当前所在行第一个非空格符处开始插入&lt;/li&gt;
-      &lt;li&gt;a,A：a为从当前光标所在的下一个字符处开始插入，A为从光标所在行的最后一格字符处开始插入&lt;/li&gt;
-      &lt;li&gt;o,O：o为当前所在的下一行处插入新的一行，O为目前光标所在的上一行插入新的一行&lt;/li&gt;
-      &lt;li&gt;r,R：r只会替换光标所在字符，R会一直替换知道Esc&lt;/li&gt;
-      &lt;li&gt;Esc：退出编辑模式，进入一般模式&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;命令行模式
-    &lt;ul&gt;
-      &lt;li&gt;:w：将编辑的数据写入硬盘文件中&lt;/li&gt;
-      &lt;li&gt;:w!：若文件为只读，强制写入文件，至于能不能写入与文件权限有关&lt;/li&gt;
-      &lt;li&gt;:q：离开vim&lt;/li&gt;
-      &lt;li&gt;:q!：若修改过文件，又不想保存，使用！强制离开&lt;/li&gt;
-      &lt;li&gt;:wq：保存后离开，“:wq!”强制保存后离开&lt;/li&gt;
-      &lt;li&gt;:set nu：显示行号&lt;/li&gt;
-      &lt;li&gt;:set nonu：取消行号显示&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 16 Jul 2018 09:42:58 +0800</pubDate>
-        <link>http://localhost:4000/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/</guid>
-        
-        <category>Linux</category>
-        
-        
-        <category>Linux</category>
-        
-        <category>book</category>
-        
-      </item>
-    
-      <item>
-        <title>Linux文件、目录与磁盘格式</title>
-        <description>&lt;h1 id=&quot;鸟哥的linux私房菜&quot;&gt;鸟哥的Linux私房菜&lt;/h1&gt;
+&lt;h1 id=&quot;鸟哥的linux私房菜&quot;&gt;鸟哥的Linux私房菜&lt;/h1&gt;
 
 &lt;h2 id=&quot;一linux文件目录与磁盘格式&quot;&gt;一、Linux文件、目录与磁盘格式&lt;/h2&gt;
 
@@ -2268,14 +2279,12 @@ The Mean absolute error of XGBoost algorithm with numerical and non-null value i
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sun, 15 Jul 2018 21:35:10 +0800</pubDate>
+        <pubDate>Sun, 15 Jul 2018 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
         <guid isPermaLink="true">http://localhost:4000/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         
-        <category>Note</category>
         
-        
-        <category>Review</category>
+        <category>notes</category>
         
       </item>
     
@@ -2445,29 +2454,12 @@ inside a list item&lt;/li&gt;
 &lt;p&gt;use the 	&lt;code class=&quot;highlighter-rouge&quot;&gt;printf()&lt;/code&gt; function&lt;/p&gt;
 
 </description>
-        <pubDate>Wed, 11 Jul 2018 21:27:17 +0800</pubDate>
-        <link>http://localhost:4000/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0l/</link>
-        <guid isPermaLink="true">http://localhost:4000/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0l/</guid>
-        
-        <category>Note</category>
+        <pubDate>Wed, 11 Jul 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
         
         
-        <category>Note</category>
-        
-      </item>
-    
-      <item>
-        <title>Empty Template</title>
-        <description>&lt;h2 id=&quot;empty-diary-template&quot;&gt;Empty diary template&lt;/h2&gt;
-
-&lt;p&gt;Empty post template&lt;/p&gt;
-</description>
-        <pubDate>Mon, 28 Dec 2015 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2015/12/28/empty-template/</link>
-        <guid isPermaLink="true">http://localhost:4000/2015/12/28/empty-template/</guid>
-        
-        
-        <category>paracraft</category>
+        <category>notes</category>
         
       </item>
     

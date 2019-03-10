@@ -1,0 +1,121 @@
+<h1 id="how-to-build-a-maching-learing-system">How to build a Maching Learing system</h1>
+
+<ul>
+  <li>The goal of our experiment is to build a maching learning system to make the House-price prediction based on the given dataset</li>
+  <li>We use imputer-method to imputer the missing value</li>
+  <li>We transform categorical variable to binary value via one-hot encoding method</li>
+  <li>We compare the model prediction performance of RandomForestRegressor algorithm and XGBoost algorithm</li>
+  <li>At last,we calculate the prediction error based on data without processing so as to show the model improvment afte processing data.</li>
+</ul>
+
+<h3 id="1import-the-dataset-and-split-it-into-train-data-and-test-data">1)Import the dataset and split it into train data and test data</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'../data/house-prices/train.csv'</span><span class="p">)</span>
+<span class="c1"># Drop houses where the target is missing
+</span><span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s">'SalePrice'</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">X_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s">'SalePrice'</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">SalePrice</span>
+<span class="n">X_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_data</span><span class="p">,</span>
+                                                <span class="n">y_data</span><span class="p">,</span>
+                                                <span class="n">train_size</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+                                                <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                                                <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2transform-categorical-variable-to-binary-value-via-one-hot-encoding">2)Transform categorical variable to binary value via one-hot encoding</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># "cardinality" means the number of unique values in a column.
+# We use it as our only way to select categorical columns here. This is convenient, though
+# a little arbitrary.
+</span><span class="n">low_cardinality_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cname</span> <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> 
+                                <span class="n">X_train</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="ow">and</span>
+                                <span class="n">X_train</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="o">==</span> <span class="s">"object"</span><span class="p">]</span>
+<span class="n">numeric_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">cname</span> <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">X_train</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span> 
+                                <span class="n">X_train</span><span class="p">[</span><span class="n">cname</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">[</span><span class="s">'int64'</span><span class="p">,</span> <span class="s">'float64'</span><span class="p">]]</span>
+<span class="n">my_cols</span> <span class="o">=</span> <span class="n">low_cardinality_cols</span> <span class="o">+</span> <span class="n">numeric_cols</span>
+<span class="n">X_train_predictors</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">my_cols</span><span class="p">]</span>
+<span class="n">X_test_predictors</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">my_cols</span><span class="p">]</span>
+
+<span class="c1">#one-hot encoding
+</span><span class="n">X_train_predictors</span><span class="p">[</span><span class="s">'tmp'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'train'</span>
+<span class="n">X_test_predictors</span><span class="p">[</span><span class="s">'tmp'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'test'</span>
+<span class="n">concat_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">X_train_predictors</span> <span class="p">,</span> <span class="n">X_test_predictors</span><span class="p">])</span>
+<span class="n">features_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">concat_data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">low_cardinality_cols</span><span class="p">,</span> <span class="n">dummy_na</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="c1"># Split your data
+</span><span class="n">X_train_encoded</span> <span class="o">=</span> <span class="n">features_data</span><span class="p">[</span><span class="n">features_data</span><span class="p">[</span><span class="s">'tmp'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'train'</span><span class="p">]</span>
+<span class="n">X_test_encoded</span> <span class="o">=</span> <span class="n">features_data</span><span class="p">[</span><span class="n">features_data</span><span class="p">[</span><span class="s">'tmp'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'test'</span><span class="p">]</span>
+
+<span class="c1"># Drop your labels
+</span><span class="n">X_train_encoded_predictors</span> <span class="o">=</span> <span class="n">X_train_encoded</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'tmp'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">X_test_encoded_predictors</span> <span class="o">=</span> <span class="n">X_test_encoded</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s">'tmp'</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3use-imputer-method-to-imputer-the-missing-values">3)Use imputer method to imputer the missing values</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#Use the Imputer class so you can impute missing values
+</span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">Imputer</span>
+
+<span class="n">my_imputer</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">()</span>
+<span class="n">imputed_X_train</span> <span class="o">=</span> <span class="n">my_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train_encoded_predictors</span><span class="p">)</span>
+<span class="n">imputed_X_test</span> <span class="o">=</span> <span class="n">my_imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_test_encoded_predictors</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="4define-function-to-calculate-the-mean-absolute-error">4)Define function to calculate the mean-absolute-error</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">cal_error</span><span class="p">(</span><span class="n">my_model</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+    <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">my_model</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+    <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">predictions</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mae</span>
+</code></pre></div></div>
+
+<h3 id="5in-order-to-compare-the-performance-between-different-model-algorithmwe-select-randomforestregressor-algorithm-and-xgboost-algorithm">5)In order to compare the performance between different model algorithm,we select RandomForestRegressor algorithm and XGBoost algorithm</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="n">model_1</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">()</span>
+<span class="n">model_2</span> <span class="o">=</span> <span class="n">XGBRegressor</span><span class="p">()</span>
+<span class="n">model_3</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="6the-final-prediction-mean-absolute-error">6)The final prediction mean-absolute-error</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mae_1</span> <span class="o">=</span> <span class="n">cal_error</span><span class="p">(</span><span class="n">model_1</span><span class="p">,</span><span class="n">imputed_X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">imputed_X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<span class="n">mae_2</span> <span class="o">=</span> <span class="n">cal_error</span><span class="p">(</span><span class="n">model_2</span><span class="p">,</span><span class="n">imputed_X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">imputed_X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The Mean absolute error of RandomForestRegressor algorithm is </span><span class="si">%2</span><span class="s">f"</span> <span class="o">%</span><span class="p">(</span><span class="n">mae_1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The Mean absolute error of XGBoost algorithm is </span><span class="si">%2</span><span class="s">f"</span> <span class="o">%</span><span class="p">(</span><span class="n">mae_2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The Mean absolute error of RandomForestRegressor algorithm is 18703.810046
+The Mean absolute error of XGBoost algorithm is 16662.033319
+</code></pre></div></div>
+
+<h3 id="7compare-to-model-which-only-use-columns-with-numerical-and-non-null-value">7)Compare to model which only use columns with numerical and non-null value</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">used_X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span>
+<span class="n">used_X_test</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">numeric_cols</span><span class="p">]</span>
+<span class="n">cols_with_missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">used_X_train</span>
+                                    <span class="k">if</span> <span class="n">used_X_train</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="nb">any</span><span class="p">()]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">used_X_train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">cols_with_missing</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">used_X_test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">cols_with_missing</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">mae_3</span> <span class="o">=</span> <span class="n">cal_error</span><span class="p">(</span><span class="n">model_1</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<span class="n">mae_4</span> <span class="o">=</span> <span class="n">cal_error</span><span class="p">(</span><span class="n">model_2</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span> 
+<span class="k">print</span><span class="p">(</span><span class="s">"The Mean absolute error of RandomForestRegressor algorithm with numerical and non-null value is </span><span class="si">%2</span><span class="s">f"</span> <span class="o">%</span><span class="p">(</span><span class="n">mae_3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"The Mean absolute error of XGBoost algorithm with numerical and non-null value is </span><span class="si">%2</span><span class="s">f"</span> <span class="o">%</span><span class="p">(</span><span class="n">mae_4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The Mean absolute error of RandomForestRegressor algorithm with numerical and non-null value is 19547.234247
+The Mean absolute error of XGBoost algorithm with numerical and non-null value is 17180.221604
+</code></pre></div></div>
+
+<ul>
+  <li>The Mean-Absolute-Error of XGBoost algorithm is much smaller than that of RandomForestRegressor</li>
+  <li>We use impter-method to imputer the missing values and apply one-hot encoding to transform categorical variable to binary value,in doing so,we can reserve features as much as possible.It turns out that we can recieve much better error performance based on these data than that remove the columns with non-numerical and non-null value</li>
+</ul>

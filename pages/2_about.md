@@ -9,7 +9,7 @@ permalink: /about/
 {:toc}
 
 ## About the site
-This is a personal website of LiXizhi, created with github and jekyll. 
+This is a personal website of Henryzhou, created with github and jekyll. 
 Create your own website is as easy as clone or fork a [template](https://github.com/LiXizhi/lixizhi.github.io) on github, and [commit](http://jekyllrb.com/docs/posts/) to `_posts` folder. 
 
 ### Admin tools
@@ -44,11 +44,4 @@ end
 
 ## About me
 
-My primary research interest is in artificial intelligence, programming and education. See my project page for details.
-
-
-### 2005 Old Website 
-Here is my old personal website when I was in University. It was mostly on my projects and thoughts before 2005.
-
-* [Xizhi's old website before 2005](/oldsite2005/index.htm). 
-
+My primary research interest is in artificial intelligence, especially in natural language processing. See my project page for details.

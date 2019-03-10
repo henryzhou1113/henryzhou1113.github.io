@@ -5,10 +5,10 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Projects</title>
-	<meta name="description" content="henry's Ideas & Blogs">
+	<title>通过bundler安装jekyll</title>
+	<meta name="description" content="  新建一个空目录，作为blog的根目录。">
 	
-	<link rel="canonical" href="http://localhost:4000/projects/">
+	<link rel="canonical" href="http://localhost:4000/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/">
 	<link rel="alternate" type="application/rss+xml" title="HenryZhou's Personal Website" href="http://localhost:4000/feed.xml" />
 	
 	<!-- <link rel="stylesheet" href="/css/main.css"> -->
@@ -63,8 +63,8 @@
         
           
             
-              <li class="active">
-              
+              <li>
+            
             <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
           
         
@@ -90,22 +90,84 @@
       <div class="row">
   <div id="myArticle" class="col-sm-9">
     <div class="post-area post">
+      <header>
+        <h1>通过bundler安装jekyll</h1>
+        <p>Jul 19, 2018</p>
+      </header>
+      <hr>
       <article>
-        
+        <ul>
+  <li><strong>新建一个空目录，作为blog的根目录。</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir blog
+cd ./blog
+</code></pre></div></div>
+
+<ul>
+  <li><strong>创建Gemfile，内容简单复制以下代码就行,命名为Gemfile</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source  'https://rubygems.org'
+gem 'github-pages',group: :jekyll_plugins
+</code></pre></div></div>
+
+<ul>
+  <li><strong>安装ruby和ruby-dev</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install ruby ruby-dev
+</code></pre></div></div>
+
+<ul>
+  <li><strong>通过ruby的安装器gem安装bundler</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install bundler
+</code></pre></div></div>
+
+<ul>
+  <li><strong>通过bundler批量安装jekyll组件</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<p>到nokogiri时终止了安装，搜索网上的问题解决办法后，发现是一些第三方依赖库没有安装，linux下在终端中输入以下命令，在手动安装nokogiri,成功！</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install libz-dev libiconv-hook1 libiconv-hook-dev
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install nokogiri -v '1.8.4'
+</code></pre></div></div>
+
+<ul>
+  <li><strong>回过头来根据Gemfile安装jekyll</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<ul>
+  <li>试试能不能启动jekyll,成功！在浏览器中网址栏输入localhost:4000,验证jekyll的运行情况</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
 
       </article>
       <hr>
-     <div class="bdsharebuttonbox">
-        <a href="#" class="bds_more" data-cmd="more"></a>
-        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-        <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
-        <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
-        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-    </div>
-    <script>
-        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
-    </script>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     </div>
 	
     <!-- duoshuo.com javascript include code. -->    
@@ -117,8 +179,8 @@
     </div>
 	<script>
 		var disqus_config = function () {
-			this.page.url = "http://henryzhou1113.github.io/projects/"; 
-			this.page.identifier = ""; 
+			this.page.url = "http://henryzhou1113.github.io/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/"; 
+			this.page.identifier = "/2018/07/19/通过bundler安装jekyll"; 
 		};
 		(function() {
 			var d = document, s = d.createElement('script');
@@ -130,6 +192,7 @@
 	
     
   </div>
+  
   <div id="content" class="col-sm-3">
     <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
     <div id="myAffix" class="shadow-bottom-center hidden-xs" >
@@ -139,6 +202,7 @@
       <div class="content-text"></div>
     </div>
   </div>
+  
 </div>
     </div>
 
@@ -168,7 +232,7 @@
           </a>
           
           <span class="point"> · </span>
-          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/pages/1_projects.md">View source</a></span>
+          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/_posts/notes/2018-07-19-通过bundler安装jekyll.md">View source</a></span>
           <!-- <span class="point"> · </span>
           <span><a class="newpost" href="javascript:;">New post</a></span> -->
 		  <span class="point"> · </span>
