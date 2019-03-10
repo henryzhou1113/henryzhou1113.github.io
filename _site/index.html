@@ -2,377 +2,1095 @@
 <html>
 
   <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>HenryZhou's Personal Website</title>
-	<meta name="description" content="henry's Ideas & Blogs">
-	
-	<link rel="canonical" href="http://localhost:4000/">
-	<link rel="alternate" type="application/rss+xml" title="HenryZhou's Personal Website" href="http://localhost:4000/feed.xml" />
-	
-	<!-- <link rel="stylesheet" href="/css/main.css"> -->
-    
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
-	<script type="text/javascript" src="/static/js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/monokai_sublime.min.css">
-	<script type="text/javascript" src="/static/js/highlight.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--
-    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css">
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/highlight.js/8.4/styles/monokai_sublime.min.css">
-	<script type="text/javascript" src="http://apps.bdimg.com/libs/highlight.js/8.4/highlight.min.js"></script>
-    -->
-    
-	<script type="text/javascript" src="/static/js/index.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
+    <title>henryzhou</title>
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_8v3czwksspqlg14i.css">
+    <link rel="stylesheet" href="/css/main.css ">
+    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="alternate" type="application/rss+xml" title="henryzhou" href="http://localhost:4000/feed.xml ">
+
+
+    <script>
+    // 百度统计代码
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?cf8506e0ef223e57ff6239944e5d46a4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+
+
+    <script>
+    // google analytics
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-72449510-4', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
+
 </head>
 
- <!--  <body data-spy="scroll" data-target="#myAffix"> -->
+
   <body>
 
-    <header>
+    <header id="top">
+    <div class="wrapper">
+        <a href="/" class="brand">henryzhou</a>
+        <small>Make robot converse with human naturally</small>
+        <button id="headerMenu" class="menu"><i class="fa fa-bars"></i></button>
+        <nav id="headerNav">
+            <ul>
+                <li>
+                    
+                    <a class="active" href="/">
+                        
+                        <i class="fa fa-home"></i>Home
+                    </a>
+                </li>
 
-<!-- navbar -->
-  <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">HenryZhou's Personal Website</a>
-      <p class="navbar-text"></p>
+                
+                    
+                    <li>
+                        
+                        <a href="/archive/">
+                        
+                            <i class="fa fa-archive"></i>Archives
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/category/">
+                        
+                            <i class="fa fa-th-list"></i>Categories
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/tag/">
+                        
+                            <i class="fa fa-tags"></i>Tags
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/collection/">
+                        
+                            <i class="fa fa-bookmark"></i>Collections
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/demo/">
+                        
+                            <i class="fa fa-play"></i>Demo
+                        </a>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        
+                        <a href="/about/">
+                        
+                            <i class="fa fa-heart"></i>About
+                        </a>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            </ul>
+        </nav>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-
-        
-          <li>
-        
-        <a href="/">Home</a></li>
-
-        
-          
-            
-              <li>
-            
-            <a href="/projects/"><span class="glyphicon "></span> Projects</a></li>
-          
-        
-          
-            
-              <li>
-            
-            <a href="/about/"><span class="glyphicon "></span> About</a></li>
-          
-        
-          
-        
-          
-        
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
 </header>
 
-    <div id="main" class="container main">
-      <div class="row">
-  <div id="myArticle" class="col-sm-9">
-    <div class="post-area post">
-      <article>
-        <h2 id="welcome-to-my-website">Welcome to my website</h2>
 
-<p>This is the place where I share my ideas on topics like ML(Machine Learning), DL(Deel Learning),especially NLP(Natural Language Processing). 
-Feel free to send me emails or join our team.</p>
+        <div class="page clearfix" index>
+    <div class="left">
+        <h1>Welcome to Henry's Blog!</h1>
+        <small>这里记录着我的NLP学习之路</small>
+        <hr>
+        <ul>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/">通过bundler安装jekyll</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-19
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
 
-      </article>
-    </div>
-  </div>
-</div>
-<p><br/></p>
-<div id="index" class="row">
-  <div class="col-sm-9">
-    <div class="post-area ">
-	  <div class="post-list-header">
-	  Posts
-	  </div>
-      <div class="post-list-body">
-        <div class="all-posts" post-cate="All">
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul>
+  <li><strong>新建一个空目录，作为blog的根目录。</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir blog
+cd ./blog
+</code></pre></div></div>
+
+<ul>
+  <li><strong>创建Gemfile，内容简单复制以下代码就行,命名为Gemfile</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source  'https://rubygems.org'
+gem 'github-pages',group: :jekyll_plugins
+</code></pre></div></div>
+
+<ul>
+  <li><strong>安装ruby和ruby-dev</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install ruby ruby-dev
+</code></pre></div></div>
+
+<ul>
+  <li><strong>通过ruby的安装器gem安装bundler</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install bundler
+</code></pre></div></div>
+
+<ul>
+  <li><strong>通过bundler批量安装jekyll组件</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<p>到nokogiri时终止了安装，搜索网上的问题解决办法后，发现是一些第三方依赖库没有安装，linux下在终端中输入以下命令，在手动安装nokogiri,成功！</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install libz-dev libiconv-hook1 libiconv-hook-dev
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo gem install nokogiri -v '1.8.4'
+</code></pre></div></div>
+
+<ul>
+  <li><strong>回过头来根据Gemfile安装jekyll</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle install
+</code></pre></div></div>
+
+<ul>
+  <li>试试能不能启动jekyll,成功！在浏览器中网址栏输入localhost:4000,验证jekyll的运行情况</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/16/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">流畅的python笔记</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-16
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>Henryzhou
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#python" title="Tag: python" rel="tag">python</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <p>[TOC]</p>
+
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/16/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/16/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/">深度学习小记</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-16
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>Henryzhou
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#DL" title="Tag: DL" rel="tag">DL</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <ul>
+  <li>人工智能早期，计算机能够迅速解决那些对人类智力来说非常困难的问题。而人工智能的真正挑战在于解决那些对人来说很容易执行，但很难形式化描述的任务，如识别人们所说的话或图像中的脸。</li>
+  <li>深度学习讨论的是一种让计算机从经验中学习，并根据层次化的概念来__理解世界__的解决方案，而每个概念则通过某些相对简单的概念之间的关系来定义</li>
+  <li>人类擅长对事物抽象因而能够认识世界，计算机则只能做一些形式化的数据处理，人工智能要做的就是通过形式化的数据处理__从另一条路径__达到认识世界的目的</li>
+  <li>深度学习
+    <ul>
+      <li>计算机难以理解原始感官输入数据的含义，如表示为像素值集合的图像。将一组像素映射到对象标识的函数非常复杂。</li>
+      <li>深度学习将所需的复杂映射分解为一系列嵌套的简单映射（每个模型的不同层描述）
+        <ul>
+          <li>可见层：包含我们能观察到的变量</li>
+          <li>隐藏层：它们的值不再数据中给出，所以称为隐藏层。模型必须确定那些概念有利于解释观察数据中关系</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>课程组织
+    <ul>
+      <li>介绍基本的数学工具和机器学习的概念</li>
+      <li>介绍最成熟的深度学习算法</li>
+      <li>讨论某些具有展望性的想法，他们被广泛的认为是深度学习未来的研究重点</li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/16/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/16/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/">如何阅读论文</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-16
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>Henryzhou
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#paper" title="Tag: paper" rel="tag">paper</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="硕士班研究所新生手册观点收获">硕士班研究所新生手册(观点收获)</h1>
+
+<p>Issued by and valid in the PPSC Lab.Directed by Prof.MH.Perng</p>
+
+<h3 id="论文的要求">论文的要求</h3>
+
+<ul>
+  <li>论文的主要内容，是叙述一套方法在一个特定场合中的应用</li>
+  <li>这套方法必须要有所创新或突破，并因而对学术界有所贡献。因此，他或者是解决既有问题的新方法，或者是既有方法的新应用，或者是以一个新的方法开启一整片新的应用领域。</li>
+  <li>提出足够的证据来让读者信服说：针对这个应用场合，你所提出的方法确实比文献中一切方法有更优越之处</li>
+  <li>清楚的指出这个方法在应用上的限制，并且提出充分证据来说服读者，任何应用场合，只要能满足你所提出来的假设（前提）条件，你的方法一定适用，而且你所描述的有点就一定存在</li>
+  <li>清楚指出这个方法的限制和可能的缺点</li>
+  <li>清楚地交代这个方法的应用程序以及所有仿真或实验结果的过程，使得这个专业领域内的任何读者，都有办法根据你的描述，在他的实验室中复制出你的研究成果。</li>
+  <li>你对这个方法中每一个步骤都必须要提供充分的理由说明“为什么非如此不可”。</li>
+  <li>论文必须在适当的位置清楚注明所有和你研究之题目相关的文献，而且是和你所研究的问题相关的学术文献（尤其是学术期刊论文），你都有必要全部找出来（如果漏掉就是你的过失），仔细读过。假如在学位论文口试时，有口试委员指出有一篇既有文献，在你所讨论的问题中处理的比你的方法还好，这就构成你论文无法及格的充分理由</li>
+  <li>所谓对学术界的贡献指的是：把你的所有研究成果扣除学术界已经发表的所有成果（不管你实际有没有参考过，没有参考过也算是你的重大过失），剩下的就是你的贡献。假如这个贡献太少，也构成你的论文无法及格的充分理由。</li>
+</ul>
+
+<h3 id="完成硕士论文所需要的能力">完成硕士论文所需要的能力</h3>
+
+<ul>
+  <li>数据检索的能力
+    <ul>
+      <li>有能力利用数据检索系统（教育部[博硕士论文检索系统]、Compendex和SCI这三套论文数据索引系统），查处所有相关的论文，而无任何遗漏</li>
+      <li>关键词很重要，假如你用的关键词太一般化，通常找到的集合会太大，除了所有相关文献之外还加上好几十倍的不相关的文献</li>
+    </ul>
+  </li>
+  <li>资料筛选能力：在你找到的百来篇和你的研究子题直接且密切相关的论文中，你如何只读论文的题目、摘要、简介和结论，而还没有完全看懂内文，就准确的判断这篇论文中是否值得你进一步参考的内容，以便快速的把需要仔细读完的论文从数百篇为二三十篇。</li>
+  <li>期刊论文的阅读能力：硕士毕业生和大学毕业生的最大区别就是：学士只需要吸收系统的能力（也就是读别人整理、组织好的知识，典型的就是课本），但硕士则学习过自己从无组织的知识中检索、筛选、组织知识的能力</li>
+  <li>期刊论文的分析能力
+    <ul>
+      <li>一个严格训练过的合格硕士，他做事的时候应该是不需要有人在背后替他做检证，他自己就应该要有能力分析自己的优缺点，主动向上级或者平行单位要求支持。其实，至少要能够完成这个能力，才勉强可以说你是有“独立自主的判断能力。</li>
+    </ul>
+  </li>
+  <li>创新的能力
+    <ul>
+      <li>大学毕业生的主要能力是吸收既有知识，但硕士毕业生却应该要有能力创造知识</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="为什么要坚持培养阅读与分析期刊论文的能力">为什么要坚持培养阅读与分析期刊论文的能力</h3>
+
+<ul>
+  <li>对于那些之想学现成技术而不想研究方法的学生，十年后可能会因为不会读期刊论文而面临提前退休</li>
+  <li>技术的创新不是完全靠天才，只要学会分析期刊论文的优缺点和一套技术创新的方法，几乎就可以轻易的组合出你所需要的绝大部分创意。</li>
+</ul>
+
+<h3 id="期刊论文的分析技巧和程序">期刊论文的分析技巧和程序</h3>
+
+<ul>
+  <li>Abstract
+    <ul>
+      <li>说明这篇论文的主要贡献、方法特色与主要内容，需要培养只看Abstract和Inroduction便可以判断出这篇论文和你研究的有没有直接关系的能力，从而决定要不要把它读完。</li>
+    </ul>
+  </li>
+  <li>Introduction
+    <ul>
+      <li>功能是介绍问题的背景和起源，交代前人在这个题目上已经有过的主要贡献和遗留的问题</li>
+    </ul>
+  </li>
+  <li>main body
+    <ul>
+      <li>这篇论文的假设及其成立的难度以判断其参考价值</li>
+      <li>在这些假设下，这篇论文的主要好处</li>
+      <li>这些好处主要表现在那些公式的那些项目的简化上，从中可以评估出这个方法使用上的方便程度或者计算效率</li>
+      <li>不需要完全弄懂一片论文所有的恒等式推导过程或者把整篇论文细细读完，只需要把确定会用到的部分完全搞懂就好，不确定或者不会用到的地方，只需要了解他的主要点子就够了。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="论文阅读的补充说明">论文阅读的补充说明</h3>
+
+<ul>
+  <li>硕士生开始读论文的时候容易犯的毛病：
+    <ul>
+      <li>老是想逐行读懂，有一行读不懂就受不了</li>
+      <li>不敢发挥自己的想象，读论文像在读教科书，论文没写的就不会，自己去猜测或想象的时候，老怕弄错作者的意思</li>
+    </ul>
+  </li>
+  <li>每次读论文要呆着问题去阅读，只图你要回答的问题。因此要有选择的阅读，由粗而细，一定是一整批一起读懂到某个层次，而不是逐篇逐篇的一次读懂</li>
+</ul>
+
+<h3 id="论文报告的要求与技巧">论文报告的要求与技巧</h3>
+
+<ul>
+  <li>第一页列出论文的题目、作者、论文出处与年份</li>
+  <li>每一页幻灯片只能讲一个观念</li>
+  <li>说明这篇论文所研究的问题的重点，以及这个问题可能和工业界的哪些应用有关</li>
+  <li>清楚交代这篇论文的主要假设、主要公式与主要应用方式（以及应用上可能的解题流程）</li>
+  <li>说明这篇论文的范例（simulation examples and/or experiments)，预测这个方法在不同场合可能会有的准确度或者好用的程度</li>
+  <li>你个人的分析、评价与批评，包括：
+    <ul>
+      <li>这篇论文的最主要创意是什么？</li>
+      <li>这些创意在应用上有什么好处？</li>
+      <li>这些创意和应用上的好处是哪些条件下才能成立？</li>
+      <li>这篇论文最主要的缺点或局限是什么？</li>
+      <li>这些缺点或局限在应用上有什么坏处？</li>
+      <li>这些缺点和应用上的坏处是因为哪些因素而引入的？</li>
+      <li>你建议学长学弟的时候参考这篇论文的哪些部分（点子）</li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/16/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/">Vim的使用</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-16
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>Henryzhou
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#notes" title="Tag: notes" rel="tag">notes</a>&nbsp;
+    
+        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="vim的使用">Vim的使用</h1>
+
+<ul>
+  <li>3种模式
+    <ul>
+      <li>一般模式：移动光标、删除字符或者整行，复制粘帖数据</li>
+      <li>编辑模式：按下“i,I,o,O,a,A,r,R”可以进入编辑模式，按下Esc可以推出编辑模式</li>
+      <li>命令行模式：输入”:,/,?”可以进入命令行模式，进行数据查找、大量替换字符、保存离开等功能</li>
+    </ul>
+  </li>
+  <li>一般模式下移动光标的方法
+    <ul>
+      <li>左右：h，l，使用组合键5h即可多列跳跃</li>
+      <li>上下：k，j，使用组合键5j即可多行跳跃</li>
+      <li>行首（行尾）：0（$）</li>
+      <li>文件首（尾）：gg（G）</li>
+      <li>向下（上）翻页：ctrl+f（b）</li>
+    </ul>
+  </li>
+  <li>一般模式下查找与替换
+    <ul>
+      <li>/word：向下寻找名称为word 的字符串</li>
+      <li>n：查找下一个</li>
+      <li>N：查找上一个</li>
+      <li>:n1,n2s/Word1/Word2/g：将n1和n2行之间的Word1替换为Word2</li>
+      <li>:1,$s/Word1/Word2/g：将第一行和最后一行之间的Word1替换为Word2</li>
+      <li>:1,$s/Word1/Word2/gc：将第一行和最后一行之间的Word1替换为Word2，并且逐个确认</li>
+    </ul>
+  </li>
+  <li>一般模式下删除
+    <ul>
+      <li>x,X:在一行字中，x为向后删除一个字符（相当于Del键），X为向前删除一个字符（相当于Backspace键），可使用组合键nx（X)连续删除n个字符</li>
+      <li>dd：删除光标所在一整行，可使用ndd删除光标所在行开始的n行</li>
+      <li>d1G：删除光标所在到第一行的所有数据</li>
+      <li>dG：删除从光标所在到最后一行的所有数据</li>
+      <li>d$：删除从光标所在处到该行最后一个数据</li>
+      <li>d0：删除从光标所在处到该行第一个数据</li>
+    </ul>
+  </li>
+  <li>一般模式下复制
+    <ul>
+      <li>yy：复制光标所在行的数据</li>
+      <li>nyy：复制光标所在向下n行</li>
+      <li>y1G：复制光标所在行到第一行的数据</li>
+      <li>yG：复制光标所在行到最后一行的数据</li>
+      <li>y0：复制光标所在字符到该行行首的所有数据</li>
+      <li>y$：复制光标所在字符到该行行尾的所有数据</li>
+      <li>p,P：p为将以复制的数据在光标下一行粘帖，P则为粘帖在光标上一行</li>
+    </ul>
+  </li>
+  <li>一般模式下其他操作
+    <ul>
+      <li>J：将光标所在行与下一行的数据结合成一行</li>
+      <li>u：撤销前一个操作</li>
+      <li>ctrl+r：重做前一个操作</li>
+      <li>.：小数点为重复前一个操作</li>
+      <li>ZZ：保存并且退出</li>
+    </ul>
+  </li>
+  <li>编辑模式
+    <ul>
+      <li>i,I：i为从目前光标所在处开始插入，I为在当前所在行第一个非空格符处开始插入</li>
+      <li>a,A：a为从当前光标所在的下一个字符处开始插入，A为从光标所在行的最后一格字符处开始插入</li>
+      <li>o,O：o为当前所在的下一行处插入新的一行，O为目前光标所在的上一行插入新的一行</li>
+      <li>r,R：r只会替换光标所在字符，R会一直替换知道Esc</li>
+      <li>Esc：退出编辑模式，进入一般模式</li>
+    </ul>
+  </li>
+  <li>命令行模式
+    <ul>
+      <li>:w：将编辑的数据写入硬盘文件中</li>
+      <li>:w!：若文件为只读，强制写入文件，至于能不能写入与文件权限有关</li>
+      <li>:q：离开vim</li>
+      <li>:q!：若修改过文件，又不想保存，使用！强制离开</li>
+      <li>:wq：保存后离开，“:wq!”强制保存后离开</li>
+      <li>:set nu：显示行号</li>
+      <li>:set nonu：取消行号显示</li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+              <li>
+                <h2>
+                  <a class="post-link" href="/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Bash学习笔记</a>
+                </h2>
+                <div class="label">
+                    <div class="label-card">
+                        <i class="fa fa-calendar"></i>2018-07-16
+                    </div>
+                    <div class="label-card">
+                        <i class="fa fa-user"></i>Henryzhou
+                        
+                    </div>
+                    <div class="label-card">
+                        
+                    </div>
+
+                    <div class="label-card">
+                    
+
+
+<!-- <span class="point">•</span> -->
+<span class="categories">
+  <i class="fa fa-th-list"></i>
+  
+    
+        <a href="/category/#notes" title="Category: notes" rel="category">notes</a>
+    
+  
+
+  <!-- <span class="point">•</span> -->
+</span>
+
+
+                    </div>
+
+                    <div class="label-card">
+                    
+<!-- <span class="point">•</span> -->
+<span class="pageTag">
+  <i class="fa fa-tags"></i>
+  
+    
+        <a href="/tag/#notes" title="Tag: notes" rel="tag">notes</a>&nbsp;
+    
+        <a href="/tag/#linux" title="Tag: linux" rel="tag">linux</a>
+    
+  
+
+</span>
+
+                    </div>
+                </div>
+                <div class="excerpt">
+                    <h1 id="bash学习">Bash学习</h1>
+
+<ul>
+  <li>history命令会列出记录的所有bash命令
+    <ul>
+      <li>!number：执行.bash_history文件中第n条命令</li>
+      <li>!!：执行上一条命令</li>
+      <li>!command：执行以command开头的最近的一条命令</li>
+    </ul>
+  </li>
+  <li>bash下组合按键
+    <ul>
+      <li>ctrl+C：终止目前的命令</li>
+      <li>ctrl+D：输入结束（EOF)</li>
+      <li>ctrl+Z：暂停目前的命令</li>
+    </ul>
+  </li>
+  <li>通配符
+    <ul>
+      <li>*：代表0到无穷多个任意字符</li>
+      <li>?：代表一定有一个任意字符</li>
+      <li>[]：代表一定有一个在中括号内的字符（非任意字符），例如[abcd]，代表一定有一个字符，可能是a,b,c,d这四个中任意一个</li>
+      <li>[-]：若有减号在中括号内，代表在编码顺序内的所有顺序，例如[0-9]代表0到9之间的所有数字</li>
+      <li>[^]：若中括号内的第一个字符为指数符号^，那表示原向选择，例如[ ^abc]代表一定有一个字符，只要是非a,b,c的其他字符就接受的意思</li>
+    </ul>
+  </li>
+  <li>bash其他符号
+    <ul>
+      <li>#：注释符号，后面内容不执行</li>
+      <li>\：转移符号</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>：管道符号，分隔两个管道命令的界定</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>～：用户的主文件夹</li>
+      <li>;：连续命令执行分隔符</li>
+      <li>$：变量前导符</li>
+      <li>&amp;：作业控制，将命令变成背景下工作</li>
+      <li>！：逻辑运算符非</li>
+      <li>/：目录符号</li>
+      <li>&gt;,»：数据流重定向，分别是“替换”和“累加”,1&gt;表示输出正确信息，2&gt;表示输出错误信息，同时输出则为2&gt;&amp;1</li>
+      <li>&lt;,«：数据流重定向，输入导向</li>
+      <li>``：两个反单引号中间为先执行命令，也可使用$()</li>
+    </ul>
+  </li>
+  <li>数据管理命令
+    <ul>
+      <li>cut：对于比较规整的信息，cut可以截取每一行特定部分的字符</li>
+      <li>grep：对输出结果进行查询筛选</li>
+      <li>sort：对输入内容进行排序</li>
+      <li>uniq：对输入去重的操作</li>
+      <li>wc：对输入进行统计计数</li>
+      <li>tee：同时将数据屏幕输出和保存到文件</li>
+      <li>xargs：将输入通过空格符或者断行符分开作为参数</li>
+      <li>-的用途：有些命令需要用到文件名作为参数，可以用-代指srdout和stdin输出的文件名</li>
+    </ul>
+  </li>
+  <li>正则表达式
+    <ul>
+      <li>字符集
+        <ul>
+          <li>[:alnum:]：代表英文大小写字符及数字，即0-9,A-Z，a-z</li>
+          <li>[:alpha:]：代表任何英文大小写字符，即A-Z,a-z</li>
+          <li>[:blank:]：代表空格键与[Tab]按键</li>
+          <li>[:cntrl:]：代表键盘上面的控制按键，即包括CR，LF，Tab，Del等</li>
+          <li>[:digit:]：代表数字字符，即0-9</li>
+          <li>[:graph:]：除了空格符（空格键与[Tab]按键）外的其他所有按键</li>
+          <li>[:lower:]：代表小写字符，即a-z</li>
+          <li>[:print:]：代表任何可以被打印出来的字符</li>
+          <li>[:punct:]：代表标点符号</li>
+          <li>[:upper:]：代表大写字符，即A-Z</li>
+          <li>[:space:]：任何会产生空白的字符，包括空格键[Tab]CR等</li>
+          <li>[:xdigit:]：代表十六进制的数字类型，因此包括0-9,A-F,a-f等</li>
+        </ul>
+      </li>
+      <li>基础字符表达式与应用
+        <ul>
+          <li>.：代表一定有一个任意字符</li>
+          <li>*：代表重复前一个0到无穷次</li>
+          <li>^word：待查找的字符串在行首</li>
+          <li>word$：待查找的字符串在行尾</li>
+          <li>[list]：从字符集合的RE字符里面找出想要选取的字符</li>
+          <li>[^list]：从字符集合的RE字符里面中找出不要的字符串或范围</li>
+          <li>[n1-n2]：从字符集合的RE字符里面找出想要选取的字符范围</li>
+          <li>[^$]：指定空白行</li>
+          <li>\{n1,n2\}：连续n到m个的前一个RE字符，若为\{n}则是连续n个的前一个RE字符，若为\{n,}则是连续n个以上的前一个RE字符</li>
+        </ul>
+      </li>
+      <li>扩展的正则表达式
+        <ul>
+          <li>+：重复一个或者一个以上的前一个RE字符</li>
+          <li>?：零个或者一个的前一个RE字符</li>
+          <li>
+            <table>
+              <tbody>
+                <tr>
+                  <td>：用或（or）的方法找出数个字符串</td>
+                </tr>
+              </tbody>
+            </table>
+          </li>
+          <li>()：找出”组“字符串</li>
+          <li>()+：多个重复组的判别</li>
+        </ul>
+      </li>
+      <li>sed命令
+        <ul>
+          <li>作用：sed本身是一个管道命令，可以分析stdin，还可以将数据进行替换、删除、新增、选取特定行的功能</li>
+          <li>语法：sed [n1] [n2] function;function选项如下所示</li>
+          <li>a:新增，a后面可以接字符串，而这些字符串会在新的一行中出现</li>
+          <li>c：替换，c的后面可以接字符串，这些字符串可以替换n1,n2之间的行</li>
+          <li>d：删除，因为是删除，所以d后面通常不接任何参数</li>
+          <li>i：插入，i的后面可以接字符串，而这些字符串会在新的一行出现</li>
+          <li>p：打印，也就是将某一个选择的数据打印出来，通常p会与sed -n一起运行</li>
+          <li>s：替换，可以直接进行替换的工作，通常这个s的动作可以搭配正则表达式，例如1,20s/word1/word2/g,即将1到20行中word1替换成word2</li>
+        </ul>
+      </li>
+      <li>文件比较工具
+        <ul>
+          <li>diff [-bBi] from-file to-file：比较from-file和to-file的差别，注意不要用diff命令去比较不相干的文件，这样没有比较的结果</li>
+          <li>cmp [-s] file1 file2：比较file1和file2，返回第一个发现的不同点字节处和行数</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+                </div>
+                <div class="read-all">
+                    <a  href="/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><i class="fa fa-newspaper-o"></i>Read All</a>
+                </div>
+                <hr>
+              </li>
+            
+        </ul>
+
+
+
+        <!-- Pagination links -->
+        <div class="pagination">
           
-            <a class="post-list-item" href="/2018/08/08/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-              <h2>
-              流畅的python学习总结
-              </h2>
-              <span class="">Aug 8, 2018</span>
-            </a>
+            <span class="previous disable"><i class="fa fa-angle-double-left"></i></span>
+            <span class="previous disable"><i class="fa fa-angle-left"></i></span>
           
-            <a class="post-list-item" href="/2018/07/20/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/">
-              <h2>
-              深度学习笔记 前言
-              </h2>
-              <span class="">Jul 20, 2018</span>
-            </a>
+          <span class="page_number ">1/2</span>
           
-            <a class="post-list-item" href="/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/">
-              <h2>
-              通过bundler安装jekyll
-              </h2>
-              <span class="">Jul 19, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/19/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/">
-              <h2>
-              硕士班研究生新生手册（观点收获）
-              </h2>
-              <span class="">Jul 19, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/17/How-to-build-A-Maching_Learning-System/">
-              <h2>
-              How To Build A Maching_learning System
-              </h2>
-              <span class="">Jul 17, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/">
-              <h2>
-              Linux入门之vim学习
-              </h2>
-              <span class="">Jul 16, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-              <h2>
-              Bash学习笔记
-              </h2>
-              <span class="">Jul 16, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-              <h2>
-              Linux入门学习笔记
-              </h2>
-              <span class="">Jul 15, 2018</span>
-            </a>
-          
-            <a class="post-list-item" href="/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-              <h2>
-              Markdown学习笔记
-              </h2>
-              <span class="">Jul 11, 2018</span>
-            </a>
+            <a href="/page2" class="next"><i class="fa fa-angle-right"></i></a>
+            <a href="/page2" class="next"><i class="fa fa-angle-double-right"></i></a>
           
         </div>
-        <!-- <div class="posts-in-categories"> -->
-        
-          <div post-cate="notes">
-            
-              
-                
-              
-            
-              
-                
-                  <a href="/2018/08/08/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/" class="post-list-item">
-                    <h2>
-                    流畅的python学习总结
-                    </h2>
-                    <span class="">Aug 8, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/20/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/" class="post-list-item">
-                    <h2>
-                    深度学习笔记 前言
-                    </h2>
-                    <span class="">Jul 20, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/" class="post-list-item">
-                    <h2>
-                    通过bundler安装jekyll
-                    </h2>
-                    <span class="">Jul 19, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/19/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/" class="post-list-item">
-                    <h2>
-                    硕士班研究生新生手册（观点收获）
-                    </h2>
-                    <span class="">Jul 19, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/" class="post-list-item">
-                    <h2>
-                    Linux入门之vim学习
-                    </h2>
-                    <span class="">Jul 16, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-list-item">
-                    <h2>
-                    Bash学习笔记
-                    </h2>
-                    <span class="">Jul 16, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-list-item">
-                    <h2>
-                    Linux入门学习笔记
-                    </h2>
-                    <span class="">Jul 15, 2018</span>
-                  </a>
-                
-              
-                
-                  <a href="/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-list-item">
-                    <h2>
-                    Markdown学习笔记
-                    </h2>
-                    <span class="">Jul 11, 2018</span>
-                  </a>
-                
-              
-            
-          </div>
-        
-          <div post-cate="nlp">
-            
-              
-                
-              
-            
-              
-                
-                  <a href="/2018/07/17/How-to-build-A-Maching_Learning-System/" class="post-list-item">
-                    <h2>
-                    How To Build A Maching_learning System
-                    </h2>
-                    <span class="">Jul 17, 2018</span>
-                  </a>
-                
-              
-            
-          </div>
-        
-        <!-- </div> -->
-      </div>
     </div>
-  </div>
-  <div class="col-sm-3">
-    <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
-        Categories
-      </div>
-      
-      <a href="javascript:;" class="categories-list-item" cate="All">
-        All<span class="my-badge"> 9</span>
-      </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="notes">
-          notes <span class="my-badge">8</span>
-        </a>
-      
-        <a href="javascript:;" class="categories-list-item" cate="nlp">
-          nlp <span class="my-badge">1</span>
-        </a>
-      
+    <!-- <button class="anchor"><i class="fa fa-anchor"></i></button> -->
+    <div class="right">
+        <div class="wrap">
+            <div class="side">
+                <div>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    Recent Posts
+                </div>
+                <ul class="content-ul" recent>
+                    
+                        <li><a href="/2018/07/19/%E9%80%9A%E8%BF%87bundler%E5%AE%89%E8%A3%85jekyll/">通过bundler安装jekyll</a></li>
+                    
+                        <li><a href="/2018/07/16/%E6%B5%81%E7%95%85%E7%9A%84python%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">流畅的python笔记</a></li>
+                    
+                        <li><a href="/2018/07/16/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%89%8D%E8%A8%80/">深度学习小记</a></li>
+                    
+                        <li><a href="/2018/07/16/%E7%A1%95%E5%A3%AB%E7%8F%AD%E7%A0%94%E7%A9%B6%E7%94%9F%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C-%E8%A7%82%E7%82%B9%E6%94%B6%E8%8E%B7/">如何阅读论文</a></li>
+                    
+                        <li><a href="/2018/07/16/linux%E5%85%A5%E9%97%A8%E4%B9%8Bvim%E5%AD%A6%E4%B9%A0/">Vim的使用</a></li>
+                    
+                        <li><a href="/2018/07/16/bash%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Bash学习笔记</a></li>
+                    
+                        <li><a href="/2018/07/15/Linux%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Linux文件、目录与磁盘格式</a></li>
+                    
+                        <li><a href="/2018/07/11/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">markdown语法</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="side ">
+                <div>
+                    <i class="fa fa-th-list"></i>
+                    Categories
+                </div>
+                <ul class="content-ul" cate>
+                    
+                    <li>
+                        <a href="/category/#notes" class="categories-list-item" cate="notes">
+                            <span class="name">
+                                notes
+                            </span>
+                            <span class="badge">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/category/#linux" class="categories-list-item" cate="linux">
+                            <span class="name">
+                                linux
+                            </span>
+                            <span class="badge">1</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- 其他div框放到这里 -->
+            <div class="side">
+                <div>
+                    <i class="fa fa-tags"></i>
+                    Tags
+                </div>
+                <div class="tags-cloud">
+                    
+                    
+                    
+                    
+
+                    
+
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#markdown" style="font-size: 9pt; color: #999;">markdown</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#notes" style="font-size: 18pt; color: #000;">notes</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#linux" style="font-size: 13.5pt; color: #444;">linux</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#paper" style="font-size: 9pt; color: #999;">paper</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#DL" style="font-size: 9pt; color: #999;">DL</a>
+                    
+                      
+                      
+                      
+                      
+                      
+                      <a href="/tag/#python" style="font-size: 9pt; color: #999;">python</a>
+                    
+                </div>
+            </div>
+
+            <!-- <div class="side">
+                <div>
+                    <i class="fa fa-external-link"></i>
+                    Links
+                </div>
+                <ul  class="content-ul">
+
+                </ul>
+            </div> -->
+        </div>
     </div>
-  </div>
 </div>
-    </div>
+<!-- <script src="/js/scroll.min.js " charset="utf-8"></script> -->
+<!-- <script src="/js/pageContent.js " charset="utf-8"></script> -->
 
-    
-    <div id="top" data-toggle="tooltip" data-placement="left" title="back to top">
-      <a href="javascript:;">
-        <div class="arrow"></div>
-        <div class="stick"></div>
-      </a>
-    </div>
 
-    <footer class="">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <a href="mailto:jasonzhoujx@outlook.com"><span class="glyphicon glyphicon-envelope"></span> jasonzhoujx@outlook.com</a>
-        <span class="point"> · </span>
-        
-          <a href="https://github.com/henryzhou1113">
-            <span class="icon">
-              <svg viewBox="0 0 16 16">
-                <path fill="#aaa" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
-              </svg>
+    <footer class="site-footer">
+
+
+    <div class="wrapper">
+
+        <p class="description">
+             本站记录我NLP之旅的沿途风景！ 
+        </p>
+        <p class="contact">
+            Contact me at: 
+            <a href="https://github.com/henryzhou1113" title="GitHub"><i class="fa fa-github" aria-hidden="true"></i></a>         
+        </p>
+        <p>
+            本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+        </p>
+        <p class="power">
+            <span>
+                Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
             </span>
-            Github
-            <!-- <span>henryzhou1113</span> -->
-          </a>
-          
-          <span class="point"> · </span>
-          <span><a href="https://github.com/henryzhou1113/henryzhou1113.github.io/index.md">View source</a></span>
-          <!-- <span class="point"> · </span>
-          <span><a class="newpost" href="javascript:;">New post</a></span> -->
-		  <span class="point"> · </span>
-          <span><a href="/feed.xml">RSS</a></span>
-          <span class="point"> · </span>
-          <span>&copy; 2018 HenryZhou</span>
-      </div>
+            <span>
+                Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+            </span>
+        </p>
     </div>
-  </div>
 </footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
+    <div class="back-to-top">
+    <a href="#top" data-scroll>
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+    <script src=" /js/main.js " charset="utf-8"></script>
+    <script src=" /js/smooth-scroll.min.js " charset="utf-8"></script>
     <script type="text/javascript">
-    function OnClickNewPost()
-    {
-        var title = prompt("Please enter title of your post");
-        if (title!=null){
-            title = title.replace(" ", "-");
-            var currentdate = new Date();
-            var urlNewPage = "?filename=_posts/" 
-                + currentdate.getFullYear() + "-" + (currentdate.getMonth()+1) + "-" + currentdate.getDate() + "-" + title + ".md";
-                
-            var defaultText =  [
-                '---',
-                'layout: post',
-                'comments: true',
-                'categories: diary',
-                '---',
-                '## Title',
-                'text'
-                ].join('\n');
-            urlNewPage += "&value=" + encodeURIComponent(defaultText);
-            window.open(urlNewPage);
-        }
-    }
-    
-    $(function() {
-      // CreateNewPostLinks
-      $('.newpost').each(function(){
-          $(this).click(OnClickNewPost);
+      smoothScroll.init({
+        speed: 500, // Integer. How fast to complete the scroll in milliseconds
+        easing: 'easeInOutCubic', // Easing pattern to use
+        offset: 20, // Integer. How far to offset the scrolling anchor location in pixels
       });
-    });
-</script>
-  
+    </script>
+    <!-- <script src=" /js/scroll.min.js " charset="utf-8"></script> -->
   </body>
+
 </html>
